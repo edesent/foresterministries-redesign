@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-wordmark: var(--font-wordmark);
+
+  /* ---- Stephen Forester Ministries brand ----
+     Taken from the ministry logo and concert poster: a crimson disc with an
+     ivory "SF" monogram, on charcoal. The old site's warm gold is kept as the
+     secondary accent — brass, like stage light on a brass instrument. */
+
+  /* Charcoal — the stage */
+  --color-ink: #100e0d;
+  --color-ink-2: #1a1716;
+  --color-ink-3: #262120;
+  --color-ink-4: #332c2a;
+
+  /* Crimson — the logo */
+  --color-crimson: #9b1622;
+  --color-crimson-bright: #c22333;
+  --color-crimson-deep: #6d0f18;
+
+  /* Brass — the spotlight */
+  --color-brass: #d9a94c;
+  --color-brass-light: #f0d089;
+  --color-brass-deep: #a87d2c;
+
+  /* Paper */
+  --color-ivory: #fdf8f0;
+  --color-parchment: #f8f3e9;
+  --color-parchment-deep: #ece3d3;
+
+  /* Text on light */
+  --color-body: #4b423b;
+  --color-muted: #8b8078;
+}
+
+:root {
+  --shadow-card: 0 22px 60px -28px rgba(0, 0, 0, 0.7);
+  --shadow-lift: 0 30px 70px -30px rgba(0, 0, 0, 0.8);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background-color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ivory);
+  background-color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: var(--color-ivory);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  /* Cormorant defaults to old-style figures; prices and dates read better
+     with full-height lining numerals. */
+  font-variant-numeric: lining-nums;
+}
+.font-wordmark {
+  font-family: var(--font-wordmark);
+}
+
+/* ---------- Small type treatments ---------- */
+
+.eyebrow {
+  font-family: var(--font-wordmark);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.wordmark {
+  font-family: var(--font-wordmark);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ---------- Textures ---------- */
+
+/* Soft warm spotlight, for the top of dark sections. */
+.spotlight {
+  background-image: radial-gradient(
+      ellipse 90% 60% at 50% -10%,
+      rgba(217, 169, 76, 0.14),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 85% 110%,
+      rgba(155, 22, 34, 0.22),
+      transparent 60%
+    );
+}
+
+.spotlight-crimson {
+  background-image: radial-gradient(
+    ellipse 80% 70% at 50% 0%,
+    rgba(155, 22, 34, 0.35),
+    transparent 70%
+  );
+}
+
+/* Very light film grain so big dark fields don't look flat. */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* Concentric record grooves — used behind the store and music sections. */
+.grooves {
+  background-image: repeating-radial-gradient(
+    circle at 50% 50%,
+    rgba(253, 248, 240, 0.045) 0 1px,
+    transparent 1px 13px
+  );
+}
+
+/* Fine hairline staff lines, like sheet music, for light bands. */
+.staff-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 22px,
+    rgba(75, 66, 59, 0.06) 22px 23px
+  );
+}
+
+/* ---------- Rules & flourishes ---------- */
+
+.rule-brass {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 169, 76, 0.55),
+    transparent
+  );
+}
+
+.flourish::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 3px;
+  margin-top: 1.15rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-crimson-bright), var(--color-brass));
+}
+.flourish-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(115deg, var(--color-crimson-bright), var(--color-crimson-deep));
+  color: var(--color-ivory);
+  box-shadow: 0 14px 32px -14px rgba(194, 35, 51, 0.85);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -14px rgba(194, 35, 51, 0.95);
+}
+
+.btn-brass {
+  background: linear-gradient(115deg, var(--color-brass-light), var(--color-brass-deep));
+  color: #2a1f0b;
+  box-shadow: 0 14px 32px -16px rgba(217, 169, 76, 0.8);
+}
+.btn-brass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -16px rgba(217, 169, 76, 0.9);
+}
+
+.btn-outline {
+  border: 1.5px solid rgba(253, 248, 240, 0.28);
+  color: var(--color-ivory);
+}
+.btn-outline:hover {
+  border-color: rgba(240, 208, 137, 0.7);
+  color: var(--color-brass-light);
+  transform: translateY(-2px);
+}
+
+.btn-ink {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+}
+.btn-ink:hover {
+  background: var(--color-ink-3);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* ---------- Cards ---------- */
+
+.card-dark {
+  background: linear-gradient(160deg, var(--color-ink-3), var(--color-ink-2));
+  border: 1px solid rgba(253, 248, 240, 0.09);
+  border-radius: 1.25rem;
+}
+.card-dark-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-dark-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(217, 169, 76, 0.4);
+  box-shadow: var(--shadow-lift);
+}
+
+/* ---------- Motion ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  opacity: 0;
+  animation: riseIn 0.9s ease forwards;
+}
+.d1 { animation-delay: 0.1s; }
+.d2 { animation-delay: 0.24s; }
+.d3 { animation-delay: 0.38s; }
+.d4 { animation-delay: 0.52s; }
+.d5 { animation-delay: 0.66s; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 70s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  .rise { opacity: 1; animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Long-form text ---------- */
+
+.prose-warm p {
+  margin-bottom: 1.2rem;
+  line-height: 1.85;
+}
+.prose-warm p:last-child {
+  margin-bottom: 0;
+}
+.prose-lede p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 0.82;
+  float: left;
+  margin: 0.3rem 0.65rem 0 0;
+  color: var(--color-crimson);
+}
+
+/* ---------- Print (concert poster page) ---------- */
+
+@media print {
+  .no-print { display: none !important; }
+  .print-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    border-radius: 0 !important;
+  }
+  @page { margin: 0.4in; }
+}
