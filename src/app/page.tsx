@@ -122,6 +122,43 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ══════════════════════════════════════════════════ video (featured) */}
+        <section
+          id="watch"
+          className="relative overflow-hidden bg-ink pt-14 pb-20 sm:pt-20 sm:pb-28 scroll-mt-20"
+        >
+          <div className="absolute inset-0 spotlight-crimson opacity-90" />
+          <div className="relative max-w-5xl mx-auto px-6 text-center">
+            <p className="eyebrow text-brass">Start here · two minutes</p>
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-ivory leading-tight">
+              See the ministry <span className="italic text-brass-light">for yourself</span>
+            </h2>
+            <p className="mt-5 text-lg text-ivory/70 max-w-2xl mx-auto leading-relaxed">
+              Music, humor, puppets, and preaching — press play and see what it looks
+              like when Stephen comes to a church.
+            </p>
+            <div className="relative mt-10 sm:mt-12">
+              <div className="absolute -inset-3 sm:-inset-5 rounded-[1.75rem] bg-gradient-to-br from-brass/30 via-crimson/20 to-crimson/35 blur-2xl" />
+              <div className="relative">
+                <VideoEmbed
+                  videoId={SITE.introVideoId}
+                  title="the ministry introduction"
+                  poster="/photos/studio-instruments.jpg"
+                  duration="2 min"
+                />
+              </div>
+            </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3.5">
+              <Link href="/contact" className="btn btn-primary">
+                Book Stephen for your church
+              </Link>
+              <Link href="/store" className="btn btn-outline">
+                Hear the music
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* ══════════════════════════════════════════════════ pillars */}
         <section className="relative overflow-hidden bg-ink-2 py-20 sm:py-28">
           <div className="absolute inset-0 grooves opacity-50" />
