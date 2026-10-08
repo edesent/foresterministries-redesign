@@ -1,12 +1,19 @@
 import Image from "next/image";
 import type { Product } from "@/config/store";
 import BuyButton from "./BuyButton";
+import ExpandableText from "./ExpandableText";
 
+/**
+ * Store card. Every card in a row is the same height, and each section sits on
+ * the same line across the row: the title gets room for two lines, the
+ * description gets a fixed two-line slot (with "Read more" if it runs longer),
+ * and the price + buy button are pinned to the bottom.
+ */
 export default function ProductCard({ product }: { product: Product }) {
   const p = product;
 
   return (
-    <article className="card-dark card-dark-hover overflow-hidden flex flex-col">
+    <article className="h-full card-dark card-dark-hover overflow-hidden flex flex-col">
       {/* Cover */}
       <div
         className={`relative aspect-square overflow-hidden ${
@@ -38,19 +45,23 @@ export default function ProductCard({ product }: { product: Product }) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-6">
         <p className="eyebrow text-brass/85 text-[0.6rem]">{p.kicker}</p>
-        <h3 className="font-display text-2xl font-semibold text-ivory mt-2.5 leading-tight">
+        <h3 className="font-display text-2xl font-semibold text-ivory mt-2.5 leading-tight sm:min-h-[2lh]">
           {p.title}
         </h3>
 
-        {p.blurb && (
-          <p className="mt-3 text-sm leading-relaxed text-ivory/60">{p.blurb}</p>
-        )}
+        {/* Fixed two-line description slot — kept even when there is no
+            description, so the song lists all start on the same line. */}
+        <div className="mt-3 text-sm leading-relaxed min-h-[2lh]">
+          {p.blurb && (
+            <ExpandableText text={p.blurb} lines={2} className="text-ivory/60" />
+          )}
+        </div>
 
         {p.tracks && (
           <ol className="mt-4 space-y-1 text-sm text-ivory/55">
             {p.tracks.map((t, i) => (
               <li key={t} className="flex gap-2.5">
-                <span className="text-brass/50 tabular-nums w-4 shrink-0 text-right">
+                <span className="text-brass/50 tabular-nums w-5 shrink-0 text-right">
                   {i + 1}
                 </span>
                 <span>{t}</span>
@@ -59,21 +70,24 @@ export default function ProductCard({ product }: { product: Product }) {
           </ol>
         )}
 
-        <div className="mt-6 pt-5 border-t border-ivory/10 flex items-baseline justify-between gap-3">
-          <span className="font-display text-3xl font-semibold text-ivory">
-            ${p.price}
-          </span>
-          <span className="text-[0.7rem] uppercase tracking-[0.16em] text-brass/70">
-            Free shipping
-          </span>
-        </div>
+        {/* Price + buy, pinned to the bottom of the card */}
+        <div className="mt-auto pt-6">
+          <div className="pt-5 border-t border-ivory/10 flex items-baseline justify-between gap-3">
+            <span className="font-display text-3xl font-semibold text-ivory">
+              ${p.price}
+            </span>
+            <span className="text-[0.7rem] uppercase tracking-[0.16em] text-brass/70">
+              Free shipping
+            </span>
+          </div>
 
-        {p.buyNote && (
-          <p className="mt-3 text-xs text-ivory/45">{p.buyNote}</p>
-        )}
+          {p.buyNote && (
+            <p className="mt-3 text-xs text-ivory/45">{p.buyNote}</p>
+          )}
 
-        <div className="mt-auto pt-4">
-          <BuyButton product={p} />
+          <div className="pt-4">
+            <BuyButton product={p} />
+          </div>
         </div>
       </div>
     </article>
