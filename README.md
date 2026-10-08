@@ -166,3 +166,41 @@ nothing to break. If Stephen would rather have inquiries land somewhere else
 `src/config/site.ts` — adding a page to `ALL_PAGES` there puts it in the sitemap
 and the footer at the same time. Page titles and descriptions live in each
 page's `export const metadata`.
+
+---
+
+## Legacy redirects
+
+Before this site, www.foresterministries.com was a WebStarts site. Its pages had
+different addresses (`/events`, `/what_pastors_are_saying`, …) and its sitemap
+listed them with a `.html` ending, so those are the addresses Google, Facebook
+posts, and other churches' websites point to. **`legacyRedirects` in
+`next.config.ts` sends every one of them to the right page here with a permanent
+(308) redirect. Do not remove it, and keep `redirects()` returning it if you add
+redirects of your own.**
+
+| Old address | Goes to |
+| --- | --- |
+| `/index`, `/index.html` | `/` |
+| `/about.html`, `/contact.html`, `/store.html` | same page without `.html` |
+| `/events`, `/events.html` | `/schedule` |
+| `/frequently_asked_questions` (+ `.html`) | `/faq` |
+| `/doctrinal_statement` (+ `.html`) | `/beliefs` |
+| `/what_pastors_are_saying` (+ `.html`) | `/endorsements` |
+| `/musical_backgrounds` (+ `.html`) | `/music` |
+| `/puppet_ministry` (+ `.html`) | `/puppets` |
+| `/concert_posters` (+ `.html`) | `/promote` |
+| `/supporters_club_2` (+ `.html`) | `/support` |
+| `/store/product/…` | `/store` |
+| Older 2008–2019 pages from the Wayback Machine (`/Schedule.html`, `/special_events`, `/music_downloads`, `/kids_programs`, `/pictures*.html`, …) | closest current page — see the file |
+
+- Matching is **case-insensitive** in Next.js, so `/Store.html` is covered too.
+  Trailing slashes are stripped first, so `/events/` works as well.
+- `/about`, `/contact`, and `/store` kept their addresses, so they have no
+  redirect — don't add one or you'll create a loop.
+- If you rename or remove a page, point its old redirect at the new address
+  rather than deleting the line.
+
+To check after a change: `npm run build && npm start`, then
+`curl -sL -o /dev/null -w '%{http_code} %{url_effective}\n' http://localhost:3000/events.html`
+should print `200 http://localhost:3000/schedule`.
