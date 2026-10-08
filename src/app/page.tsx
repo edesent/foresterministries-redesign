@@ -217,30 +217,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════════ video */}
-        <section className="relative overflow-hidden bg-ink-2 py-20 sm:py-24">
-          <div className="absolute inset-0 spotlight-crimson opacity-80" />
-          <div className="relative max-w-4xl mx-auto px-6 text-center">
-            <Reveal>
-              <p className="eyebrow text-brass">Two minutes</p>
-              <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ivory leading-tight">
-                See the ministry for yourself
-              </h2>
-              <p className="mt-5 text-ivory/65 max-w-xl mx-auto leading-relaxed">
-                Music, humor, puppets, and preaching — here is what it looks like when
-                Stephen comes to a church.
-              </p>
-            </Reveal>
-            <Reveal className="mt-11" delay={120}>
-              <VideoEmbed
-                videoId={SITE.introVideoId}
-                title="Ministry introduction"
-                poster="/photos/studio-instruments.jpg"
-              />
-            </Reveal>
-          </div>
-        </section>
-
         {/* ══════════════════════════════════════════════════ music / store */}
         <section className="relative overflow-hidden bg-ink py-20 sm:py-28">
           <div className="absolute inset-0 grooves opacity-60" />
