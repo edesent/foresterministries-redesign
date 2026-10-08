@@ -325,23 +325,23 @@ export const SUPPORT_FAQS = [
 
 export const PROMOTE_STEPS = [
   {
-    title: "Download the poster",
-    body: "The printable concert poster leaves the date, place, and time blank so you can fill them in by hand or type them in before you print.",
+    title: "Fill in your details",
+    body: "Type in your date, time, church, and address, and choose a photo. The poster updates as you type. Anything you leave blank becomes a line to write on by hand.",
   },
   {
-    title: "Print as many as you like",
-    body: "Standard letter paper works fine. Post them in the foyer, hand them out to your people, and put a few up around town.",
+    title: "Print it or save a PDF",
+    body: "It prints on regular letter paper, in color or black and white. Post them in the foyer, hand them out, put a few up around town — or save a PDF for email and Facebook.",
   },
   {
     title: "Need something different?",
-    body: "If you’d like a different photo, a different size, or a finished poster with your details already on it, just email Stephen and he’ll take care of it.",
+    body: "If you’d like a different photo, a different size, or something custom, just send Stephen a message and he’ll take care of it.",
   },
 ];
 
 export const PROMOTE_ASSETS = [
   {
-    title: "Concert poster (blank)",
-    note: "Letter size · fill in date, place & time",
+    title: "Concert poster",
+    note: "Letter size · add your date, time & church",
     href: "/promote/poster",
   },
   {
@@ -358,6 +358,6 @@ export const PRESS_PHOTOS = [
   { src: "/photos/autumn-keyboard.jpg", alt: "Stephen Forester with keyboard and guitar in autumn woods", ratio: "wide" as const },
   { src: "/photos/promo-portrait.jpg", alt: "Portrait of Stephen Forester", ratio: "tall" as const },
   { src: "/photos/autumn-tall-1.jpg", alt: "Stephen Forester outdoors in autumn", ratio: "tall" as const },
-  { src: "/photos/promo-tall-4.jpg", alt: "Stephen Forester with a guitar", ratio: "tall" as const },
+  { src: "/photos/promo-tall-1.jpg", alt: "Stephen Forester at the keyboard with three of his puppets and his guitar", ratio: "tall" as const },
   { src: "/photos/tall-2019-a.jpg", alt: "Stephen Forester promotional portrait", ratio: "tall" as const },
 ];

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { PROMOTE_STEPS, PRESS_PHOTOS } from "@/config/content";
+import PosterThumb from "./poster/PosterThumb";
 import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -31,56 +32,31 @@ export default function Promote() {
           <div className="relative max-w-6xl mx-auto px-6">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-center">
               <Reveal className="lg:col-span-5">
-                <div className="relative aspect-[8.5/11] overflow-hidden rounded-xl ring-1 ring-ivory/15 shadow-[var(--shadow-card)] bg-ink-2">
-                  <div className="absolute inset-0 flex flex-col">
-                    <div className="relative flex-1">
-                      <Image
-                        src="/photos/studio-instruments.jpg"
-                        alt=""
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="bg-gradient-to-r from-crimson-deep to-crimson flex items-center gap-3 px-4 py-3">
-                      <Image
-                        src="/brand/sf-monogram.png"
-                        alt=""
-                        width={512}
-                        height={512}
-                        className="h-9 w-auto"
-                      />
-                      <span className="wordmark text-ivory text-[0.6rem] leading-[1.5]">
-                        Stephen
-                        <br />
-                        Forester
-                        <br />
-                        Ministries
-                      </span>
-                    </div>
-                    <div className="bg-parchment px-4 py-4 space-y-2">
-                      {["Date", "Place", "Time"].map((l) => (
-                        <p
-                          key={l}
-                          className="wordmark text-[0.55rem] text-ink flex items-baseline gap-2"
-                        >
-                          {l}:
-                          <span className="flex-1 border-b border-ink/40" />
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <Link
+                  href="/promote/poster"
+                  className="block overflow-hidden rounded-xl ring-1 ring-ivory/15 shadow-[var(--shadow-card)] transition hover:ring-brass/50"
+                  aria-label="Open the poster maker"
+                >
+                  <PosterThumb
+                    data={{
+                      date: "2026-11-15",
+                      time: "6:00 PM",
+                      venue: "Your Church Name",
+                      address: "123 Main St.",
+                      city: "Your Town, MI",
+                    }}
+                  />
+                </Link>
               </Reveal>
 
               <Reveal className="lg:col-span-7" delay={110}>
                 <p className="eyebrow text-brass">The poster</p>
                 <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ivory leading-tight">
-                  Print it, fill it in, put it up
+                  Your poster, ready in a minute
                 </h2>
                 <p className="mt-5 text-lg leading-relaxed text-ivory/68">
-                  The poster leaves the date, place, and time blank so you can write them in
-                  by hand — or type them in on screen before you print.
+                  Type in your date, time, and church, pick a photo, and print it — or save it
+                  as a PDF to email, post on Facebook, or put in the bulletin.
                 </p>
 
                 <ol className="mt-9 space-y-6">
@@ -101,7 +77,7 @@ export default function Promote() {
 
                 <div className="mt-10 flex flex-wrap gap-4">
                   <Link href="/promote/poster" className="btn btn-primary">
-                    Open the printable poster
+                    Make your poster
                   </Link>
                   <Link href="/contact?about=poster#message" className="btn btn-outline">
                     Ask for a custom poster
@@ -122,7 +98,11 @@ export default function Promote() {
               </h2>
               <p className="mt-4 text-ivory/60 leading-relaxed">
                 Right-click any photo to save it for your bulletin, slides, or social media.
-                If you need a different crop or a higher resolution, just email Stephen.
+                Need a different crop or a higher resolution?{" "}
+                <Link href="/contact?about=poster#message" className="text-brass-light underline underline-offset-2">
+                  Send Stephen a message
+                </Link>
+                .
               </p>
             </Reveal>
 

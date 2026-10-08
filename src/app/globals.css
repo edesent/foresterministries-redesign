@@ -318,17 +318,30 @@ body {
   color: var(--color-crimson);
 }
 
-/* ---------- Print (concert poster page) ---------- */
+/* ---------- Concert poster (/promote/poster) ---------- */
+
+/* Browsers drop background colors and images when printing unless told not
+   to; without this the poster's crimson date block prints white-on-white. */
+.poster-sheet,
+.poster-sheet * {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
 
 @media print {
   .no-print { display: none !important; }
-  .print-sheet {
-    box-shadow: none !important;
-    border: none !important;
+  @page { size: letter; margin: 0; }
+  html, body, .poster-page { background: #fff !important; }
+  .poster-page { min-height: 0 !important; }
+  .poster-page > div { display: block !important; padding: 0 !important; margin: 0 !important; max-width: none !important; }
+  /* Undo the on-screen fit-to-width scaling: print the sheet at true size. */
+  .poster-scale {
+    width: 8.5in !important;
+    height: 11in !important;
     margin: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
     border-radius: 0 !important;
+    box-shadow: none !important;
   }
-  @page { margin: 0.4in; }
+  .poster-scale-inner { transform: none !important; }
+  .poster-sheet { width: 8.5in !important; height: 11in !important; }
 }
