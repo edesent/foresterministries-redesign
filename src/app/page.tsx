@@ -86,9 +86,14 @@ export default function Home() {
                 <Link href="/contact" className="btn btn-primary">
                   Book Stephen
                 </Link>
-                <Link href="/store" className="btn btn-outline">
-                  Hear the music
-                </Link>
+                <a href="#watch" className="btn btn-outline inline-flex items-center gap-2.5">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-crimson">
+                    <svg viewBox="0 0 24 24" className="ml-0.5 h-3.5 w-3.5 text-ivory" fill="currentColor">
+                      <path d="M8 5.5v13l11-6.5-11-6.5z" />
+                    </svg>
+                  </span>
+                  Watch the 2-minute video
+                </a>
               </div>
             </div>
 
