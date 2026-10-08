@@ -119,15 +119,15 @@ export default function Footer() {
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>
           <p>
-            Designed by{" "}
             <a
               href="https://www.elijahdesent.com"
               target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-ivory/60 transition-colors"
+              rel="noopener"
+              className="underline underline-offset-2 hover:text-ivory/60 transition-colors"
             >
-              elijahdesent.com
-            </a>
+              Website Design
+            </a>{" "}
+            by Elijah Desent
           </p>
         </div>
       </div>
