@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Nav from "@/components/Nav";
@@ -245,9 +246,9 @@ export default function Store() {
                 <a href={`tel:${phoneTel}`} className="btn btn-primary">
                   {SITE.phone}
                 </a>
-                <a href={`mailto:${SITE.email}`} className="btn btn-outline">
-                  Email Stephen
-                </a>
+                <Link href="/contact?about=store#message" className="btn btn-outline">
+                  Message Stephen
+                </Link>
               </div>
             </Reveal>
           </div>

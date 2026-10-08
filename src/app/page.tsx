@@ -493,15 +493,6 @@ export default function Home() {
                   Send a message
                 </Link>
               </div>
-              <p className="mt-7 text-sm text-ivory/55">
-                Or email{" "}
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-brass-light underline underline-offset-2 break-all"
-                >
-                  {SITE.email}
-                </a>
-              </p>
             </Reveal>
           </div>
         </section>

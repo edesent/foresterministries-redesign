@@ -204,3 +204,18 @@ redirects of your own.**
 To check after a change: `npm run build && npm start`, then
 `curl -sL -o /dev/null -w '%{http_code} %{url_effective}\n' http://localhost:3000/events.html`
 should print `200 http://localhost:3000/schedule`.
+
+---
+
+## Contact form (how messages reach Stephen)
+
+The form on `/contact` posts to `src/app/api/form/route.ts`, which emails the
+message to Stephen through Resend, sent from `contact@elijahdesent.com` with
+the visitor as reply-to, so he can just hit Reply. It's set by three Vercel
+environment variables, never in the code: `RESEND_API_KEY`, `FORM_TO` (where
+messages go — currently his Yahoo inbox) and `FORM_SECRET`.
+
+**No email address is printed anywhere on the site, on purpose.** Printed
+addresses get harvested for spam. Every "email Stephen" button links to
+`/contact#message`; add `?about=poster`, `?about=store` or `?about=support` to
+pre-select the topic. Don't add `SITE.email` back.

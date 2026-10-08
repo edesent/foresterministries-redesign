@@ -51,12 +51,12 @@ export default function Contact() {
 
                   <div className="mt-8 rule-brass" />
 
-                  <p className="eyebrow text-brass mt-8">Email</p>
+                  <p className="eyebrow text-brass mt-8">Message</p>
                   <a
-                    href={`mailto:${SITE.email}`}
-                    className="mt-3 block text-lg text-ivory hover:text-brass-light transition-colors break-all"
+                    href="#message"
+                    className="mt-3 block text-lg text-ivory hover:text-brass-light transition-colors"
                   >
-                    {SITE.email}
+                    Use the form — it goes straight to Stephen
                   </a>
 
                   <p className="eyebrow text-brass mt-8">Mail</p>
@@ -125,14 +125,15 @@ export default function Contact() {
 
               {/* Form */}
               <Reveal className="lg:col-span-7" delay={120}>
-                <div className="card-dark p-8 sm:p-10">
-                  <p className="eyebrow text-brass">Booking inquiry</p>
+                <div id="message" className="card-dark scroll-mt-28 p-8 sm:p-10">
+                  <p className="eyebrow text-brass">Booking &amp; messages</p>
                   <h2 className="mt-4 font-display text-3xl sm:text-4xl font-semibold text-ivory leading-tight">
                     Tell Stephen about your church
                   </h2>
                   <p className="mt-4 text-ivory/60 leading-relaxed">
                     Fill in whatever you know and he&rsquo;ll follow up personally. Nothing
-                    here is required except your name and email.
+                    here is required except your name and email — and it doesn’t have to be a
+                    booking; questions and prayer requests are welcome too.
                   </p>
                   <div className="mt-9">
                     <BookingForm />

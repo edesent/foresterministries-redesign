@@ -103,12 +103,12 @@ export default function Poster() {
         <p className="text-sm leading-relaxed text-ivory/50">
           Type your details into the lines above, then print. Need a different photo, size,
           or a finished poster with your details already on it?{" "}
-          <a
-            href={`mailto:${SITE.email}?subject=${encodeURIComponent("Concert poster request")}`}
+          <Link
+            href="/contact?about=poster#message"
             className="text-brass-light underline underline-offset-2"
           >
-            Email Stephen
-          </a>{" "}
+            Send Stephen a message
+          </Link>{" "}
           and he&rsquo;ll take care of it.
         </p>
         <Link

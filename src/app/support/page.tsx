@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Nav from "@/components/Nav";
@@ -118,10 +119,12 @@ export default function Support() {
 
             <Reveal className="mt-8">
               <p className="text-center text-sm text-ivory/50 max-w-2xl mx-auto leading-relaxed">
-                You can also send a gift straight from your own PayPal account to{" "}
-                <span className="text-brass-light">{SUPPORT.paypalEmail}</span>{" "}
-                using the
-                &ldquo;send money to friends and family&rdquo; option.
+                Giving online works with any PayPal account or a regular debit or credit card.
+                Questions about a gift?{" "}
+                <Link href="/contact?about=support#message" className="text-brass-light underline underline-offset-2">
+                  Send Stephen a message
+                </Link>
+                .
               </p>
             </Reveal>
           </div>
@@ -172,9 +175,9 @@ export default function Support() {
                 </p>
                 <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
                   <SupportButton label="Join the Supporters Club" />
-                  <a href={`mailto:${SITE.email}`} className="btn btn-outline">
-                    Email Stephen
-                  </a>
+                  <Link href="/contact?about=support#message" className="btn btn-outline">
+                    Message Stephen
+                  </Link>
                 </div>
               </div>
             </Reveal>

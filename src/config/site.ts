@@ -16,7 +16,9 @@ export const SITE = {
 
   // Contact
   phone: "(810) 358-0518",
-  email: "foresterministries@yahoo.com",
+  // No email address here on purpose: a printed address gets harvested for
+  // spam. Every "email Stephen" button links to the form on /contact, which
+  // emails him (see src/app/api/form/route.ts).
   mailingName: "Stephen Forester",
   mailingStreet: "71 S. Elba Rd.",
   mailingCity: "Lapeer",
@@ -51,8 +53,6 @@ export const SITE = {
 export const SUPPORT = {
   paypalDonateButtonId: "URWW4FBGCGPUJ",
   stripeUrl: "",
-  /** Sending a gift directly, PayPal friends-and-family style */
-  paypalEmail: "foresterministries@yahoo.com",
   minimumMonthly: 5,
 };
 

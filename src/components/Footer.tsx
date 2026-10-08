@@ -84,12 +84,12 @@ export default function Footer() {
               {SITE.phone}
             </a>
             <p className="text-xs text-ivory/40 mt-1">Call or text</p>
-            <a
-              href={`mailto:${SITE.email}`}
-              className="block text-sm text-ivory/70 hover:text-brass-light transition-colors mt-4 break-all"
+            <Link
+              href="/contact#message"
+              className="block text-sm text-ivory/70 hover:text-brass-light transition-colors mt-4"
             >
-              {SITE.email}
-            </a>
+              Send a message
+            </Link>
             <p className="text-sm text-ivory/50 mt-4 leading-relaxed">
               {SITE.mailingName}
               <br />

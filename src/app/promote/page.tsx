@@ -103,9 +103,9 @@ export default function Promote() {
                   <Link href="/promote/poster" className="btn btn-primary">
                     Open the printable poster
                   </Link>
-                  <a href={`mailto:${SITE.email}`} className="btn btn-outline">
+                  <Link href="/contact?about=poster#message" className="btn btn-outline">
                     Ask for a custom poster
-                  </a>
+                  </Link>
                 </div>
               </Reveal>
             </div>
