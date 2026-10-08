@@ -11,10 +11,13 @@ export default function VideoEmbed({
   videoId,
   title,
   poster,
+  duration,
 }: {
   videoId: string;
   title: string;
   poster?: string;
+  /** Optional running time shown on the play overlay, e.g. "2 min". */
+  duration?: string;
 }) {
   const [playing, setPlaying] = useState(false);
   const thumb = poster ?? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
@@ -39,16 +42,37 @@ export default function VideoEmbed({
           <img
             src={thumb}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-80 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-95"
+            className="absolute inset-0 h-full w-full object-cover opacity-90 transition-all duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
           />
-          <span className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/25" />
-          <span className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-            <span className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-crimson shadow-[0_16px_40px_-12px_rgba(194,35,51,0.9)] transition-transform duration-300 group-hover:scale-110">
-              <svg viewBox="0 0 24 24" className="ml-1 h-8 w-8 text-ivory" fill="currentColor">
-                <path d="M8 5.5v13l11-6.5-11-6.5z" />
-              </svg>
+          <span className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-ink/20" />
+          <span className="absolute inset-0 flex flex-col items-center justify-center gap-5">
+            <span className="relative flex h-20 w-20 sm:h-28 sm:w-28 items-center justify-center">
+              {/* Soft pulse so the eye lands on the play button */}
+              <span className="absolute inset-0 rounded-full bg-crimson/60 animate-ping motion-reduce:animate-none" />
+              <span className="absolute -inset-2 rounded-full ring-2 ring-ivory/30" />
+              <span className="relative flex h-full w-full items-center justify-center rounded-full bg-crimson shadow-[0_20px_50px_-12px_rgba(194,35,51,0.95)] transition-transform duration-300 group-hover:scale-110">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="ml-1.5 h-9 w-9 sm:h-12 sm:w-12 text-ivory"
+                  fill="currentColor"
+                >
+                  <path d="M8 5.5v13l11-6.5-11-6.5z" />
+                </svg>
+              </span>
             </span>
-            <span className="eyebrow text-brass-light text-[0.62rem]">{title}</span>
+            <span className="flex items-center gap-2.5 rounded-full bg-ink/70 backdrop-blur-sm px-4 py-2 ring-1 ring-ivory/15">
+              <span className="eyebrow text-ivory text-[0.62rem] sm:text-[0.7rem]">
+                Watch {title}
+              </span>
+              {duration && (
+                <>
+                  <span className="h-3 w-px bg-ivory/30" />
+                  <span className="eyebrow text-brass-light text-[0.62rem] sm:text-[0.7rem]">
+                    {duration}
+                  </span>
+                </>
+              )}
+            </span>
           </span>
         </button>
       )}
