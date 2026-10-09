@@ -92,7 +92,7 @@ export default function Home() {
                       <path d="M8 5.5v13l11-6.5-11-6.5z" />
                     </svg>
                   </span>
-                  Watch the 2-minute video
+                  Watch the 3-minute video
                 </a>
               </div>
             </div>
