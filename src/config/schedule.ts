@@ -371,6 +371,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2026-12-13",
+    venue: "Open Door Baptist Church",
+    address: "3464 Cocotte St.",
+    city: "Detroit",
+    state: "MI",
+    zip: "48210",
+    time: "11:30am service",
+  },
+  {
     date: "2026-12-18",
     venue: "Sheldon Meadows Assisted Living",
     address: "4482 Port Sheldon St.",
