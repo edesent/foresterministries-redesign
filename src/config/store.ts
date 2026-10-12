@@ -277,7 +277,7 @@ export const PRODUCTS: Product[] = [
     blurb:
       "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
     buyNote: "Tell us your size at checkout.",
-    paypal: { kind: "hosted", buttonId: "GSHMGE2RY4S64" },
+    paypal: { kind: "hosted-sdk", hostedButtonId: "GSHMGE2RY4S64" },
     stripeUrl: "",
   },
 ];
