@@ -180,6 +180,34 @@ export default function Store() {
                 </Reveal>
               )}
             </div>
+
+            {dualUsb && (
+              <Reveal className="mt-12 mx-auto w-full max-w-xl">
+                <div className="card-dark card-dark-hover overflow-hidden flex flex-col">
+                  <div className="relative aspect-[21/10] bg-ink-3">
+                    <img
+                      src={dualUsb.image}
+                      alt="Stephen Forester Sunshine & Rain and You Are Loved Dual-Album USB artwork"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-8">
+                    <p className="eyebrow text-brass/85 text-[0.6rem]">{dualUsb.kicker}</p>
+                    <h3 className="mt-2.5 font-display text-3xl font-semibold text-ivory text-center">
+                      {dualUsb.title}
+                    </h3>
+                    <p className="mt-3.5 leading-relaxed text-ivory/62 text-center">{dualUsb.blurb}</p>
+                    <div className="mt-6 pt-5 border-t border-ivory/10 flex items-baseline justify-between">
+                      <span className="font-display text-4xl font-semibold text-ivory">${dualUsb.price}</span>
+                      <span className="text-[0.7rem] uppercase tracking-[0.16em] text-brass/70">Free shipping</span>
+                    </div>
+                    <div className="mt-5">
+                      <BuyButton product={dualUsb} label={`Buy Now · ${dualUsb.price}`} />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            )}
           </div>
         </section>
 
