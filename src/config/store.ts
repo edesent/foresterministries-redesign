@@ -202,6 +202,7 @@ export const PRODUCTS: Product[] = [
     price: 20,
     category: "apparel",
     image: "/store/img-9747.jpeg",
+    badge: "Newest",
     blurb:
       "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
     buyNote: "Tell us your size at checkout.",
