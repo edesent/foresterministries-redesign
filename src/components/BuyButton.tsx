@@ -25,7 +25,7 @@ export default function BuyButton({
   className?: string;
   label?: string;
 }) {
-  const text = label ?? (product.category === "apparel" ? "Buy Now" : `Buy · ${product.price}`);
+  const text = label ?? (product.category === "apparel" ? "Buy Now" : `Buy · $${product.price}`);
   const btn = `btn btn-primary w-full ${className}`;
 
   // ---- Stripe (once a payment link is pasted in) ----
