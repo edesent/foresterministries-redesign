@@ -121,6 +121,7 @@ export async function POST(request: Request) {
     location ? `City & state: ${location}` : null,
     type ? `About: ${type}` : null,
     dates ? `Dates in mind: ${dates}` : null,
+    budget ? `Proposed Budget: ${budget}` : null,
     `Email: ${email}`,
     phone ? `Phone: ${phone}` : null,
     "",
