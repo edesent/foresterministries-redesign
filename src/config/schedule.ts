@@ -371,6 +371,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2026-12-11",
+    venue: "Bethany Church",
+    address: "353 E. Vienna St.",
+    city: "Clio",
+    state: "MI",
+    zip: "48420",
+    time: "2:00pm concert",
+  },
+  {
     date: "2026-12-13",
     venue: "Open Door Baptist Church",
     address: "3464 Cocotte St.",
