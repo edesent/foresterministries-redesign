@@ -9,7 +9,6 @@ const EVENT_TYPES = [
   "Sunday service",
   "Revival meeting",
   "Banquet",
-  "Children's program / VBS",
   "Retirement home",
   "Poster request",
   "Store order or question",
