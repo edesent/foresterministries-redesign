@@ -20,20 +20,41 @@ export default function ProductCard({ product }: { product: Product }) {
           p.category === "apparel" ? "bg-white" : "bg-ink"
         }`}
       >
-        {p.image && (
-          <Image
-            src={p.image}
-            alt={
-              p.category === "apparel"
-                ? `${p.title}`
-                : `${p.title} — album cover`
-            }
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className={
-              p.category === "apparel" ? "object-contain p-5" : "object-cover"
-            }
-          />
+        {p.covers ? (
+          <div className="absolute inset-0 flex items-center p-5">
+            <div className="grid w-full grid-cols-3 gap-2">
+              {p.covers.map((c) => (
+                <div
+                  key={c}
+                  className="relative aspect-square overflow-hidden rounded-md ring-1 ring-ivory/15 shadow-lg"
+                >
+                  <Image
+                    src={c}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 30vw, (max-width: 1024px) 15vw, 10vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          p.image && (
+            <Image
+              src={p.image}
+              alt={
+                p.category === "apparel"
+                  ? `${p.title}`
+                  : `${p.title} — album cover`
+              }
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className={
+                p.category === "apparel" ? "object-contain p-5" : "object-cover"
+              }
+            />
+          )
         )}
         {p.badge && (
           <span className="absolute top-3.5 left-3.5 rounded-full bg-crimson px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-ivory shadow-lg">
