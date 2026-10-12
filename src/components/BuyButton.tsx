@@ -1,5 +1,6 @@
 import type { Product } from "@/config/store";
 import { usesStripe } from "@/config/store";
+import PayPalHostedButton from "@/components/PayPalHostedButton";
 
 /**
  * The "Buy" button for one product.
