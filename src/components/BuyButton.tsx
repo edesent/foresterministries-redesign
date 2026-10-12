@@ -59,6 +59,11 @@ export default function BuyButton({
     );
   }
 
+  // ---- PayPal: JavaScript SDK hosted button ----
+  if (product.paypal.kind === "hosted-sdk") {
+    return <PayPalHostedButton hostedButtonId={product.paypal.hostedButtonId} />;
+  }
+
   // ---- PayPal: classic hosted button ----
   return (
     <form
