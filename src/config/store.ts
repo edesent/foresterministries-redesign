@@ -219,6 +219,19 @@ export const PRODUCTS: Product[] = [
   },
   /* --------------------------------------------------------------- apparel  */
   {
+    slug: "shirt-grace-and-mercy",
+    title: "“I Found God’s Grace & Mercy” T-Shirt",
+    kicker: "Blue · sizes S–3XL",
+    price: 20,
+    category: "apparel",
+    image: "/store/img-9747.jpeg",
+    blurb:
+      "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
+    buyNote: "Tell us your size at checkout.",
+    paypal: { kind: "hosted-sdk", hostedButtonId: "GSHMGE2RY4S64" },
+    stripeUrl: "",
+  },
+  {
     slug: "shirt-you-are-loved",
     title: "“You Are Loved” T-Shirt",
     kicker: "Navy · sizes S–3XL",
@@ -242,19 +255,6 @@ export const PRODUCTS: Product[] = [
       "Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
     buyNote: "Tell us your size at checkout.",
     paypal: { kind: "link", paymentId: "KFB9VHSGMZP4N" },
-    stripeUrl: "",
-  },
-  {
-    slug: "shirt-grace-and-mercy",
-    title: "“I Found God’s Grace & Mercy” T-Shirt",
-    kicker: "Blue · sizes S–3XL",
-    price: 20,
-    category: "apparel",
-    image: "/store/img-9747.jpeg",
-    blurb:
-      "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
-    buyNote: "Tell us your size at checkout.",
-    paypal: { kind: "hosted-sdk", hostedButtonId: "GSHMGE2RY4S64" },
     stripeUrl: "",
   },
 ];
