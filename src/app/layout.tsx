@@ -1,27 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Cormorant_Garamond, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { SITE } from "@/config/site";
 import "./globals.css";
 
-const cinzel = Cinzel({
+// Self-hosted: next/font/google fetches at build time, and Vercel's build
+// workers intermittently can't reach Google Fonts, which fails the deploy.
+const cinzel = localFont({
   variable: "--font-wordmark",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  src: "../fonts/cinzel.woff2",
+  weight: "400 700",
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const cormorant = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/cormorant.woff2", weight: "400 700", style: "normal" },
+    { path: "../fonts/cormorant-italic.woff2", weight: "400 700", style: "italic" },
+  ],
   display: "swap",
 });
 
-const inter = Inter({
+const inter = localFont({
   variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  src: "../fonts/inter.woff2",
+  weight: "400 700",
   display: "swap",
 });
 
