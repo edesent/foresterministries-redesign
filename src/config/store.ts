@@ -218,29 +218,6 @@ export const PRODUCTS: Product[] = [
     paypal: { kind: "hosted", buttonId: "SHMHWKZ9ENXGN" },
     stripeUrl: "",
   },
-  {
-    slug: "he-wont-fail-you",
-    title: "He Won't Fail You",
-    kicker: "2020 release",
-    price: 10,
-    category: "album",
-    image: "/store/he-wont-fail-you.jpg",
-    tracks: [
-      "He Won't Fail You",
-      "She Still Remembers Jesus' Name",
-      "Power In The Blood",
-      "Why Worry",
-      "Thank-You",
-      "The Unclouded Day",
-      "Now More Than Ever (feat. Marie)",
-      "Happy Ending",
-      "The Judgement",
-      "Get There",
-    ],
-    paypal: { kind: "hosted", buttonId: "KF76P428DUPYA" },
-    stripeUrl: "",
-  },
-
   /* --------------------------------------------------------------- apparel  */
   {
     slug: "shirt-you-are-loved",
