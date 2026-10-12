@@ -84,6 +84,7 @@ export const PRODUCTS: Product[] = [
       "/store/onward-christian-soldiers.jpg",
       "/store/amazing-grace.jpg",
       "/store/a-christmas-hallelujah.jpg",
+      "/store/he-wont-fail-you.jpg",
     ],
     paypal: { kind: "hosted", buttonId: "3HJJVRRAWJAL8" },
     stripeUrl: "",
