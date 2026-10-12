@@ -34,7 +34,7 @@ const ORDER_METHODS = [
 export default function Store() {
   const bundle = findProduct("all-six-albums");
   const usb = findProduct("usb-drive");
-  const albums = byCategory("album");
+  const albums = [bundle, ...byCategory("album").filter((p) => p.slug !== "he-wont-fail-you")].filter((p): p is NonNullable<typeof p> => Boolean(p));
   const shirts = byCategory("apparel");
 
   return (
