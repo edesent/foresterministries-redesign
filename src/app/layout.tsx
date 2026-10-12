@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE } from "@/config/site";
 import "./globals.css";
 
@@ -125,7 +126,10 @@ export default function RootLayout({
       lang="en"
       className={`${cinzel.variable} ${cormorant.variable} ${inter.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-ink">{children}</body>
+      <body className="min-h-screen flex flex-col bg-ink">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
