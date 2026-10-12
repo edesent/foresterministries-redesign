@@ -29,7 +29,7 @@ export const PILLARS = [
 export const HOME_STATS = [
   { value: "100+", label: "Meetings each year" },
   { value: "2008", label: "Traveling since" },
-  { value: "6", label: "Albums recorded" },
+  { value: "20", label: "Albums recorded" },
   { value: "10+", label: "States & Canada" },
 ];
 
