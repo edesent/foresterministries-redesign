@@ -144,7 +144,7 @@ function Form({ preset }: { preset: string | null }) {
         <input
           name="budget"
           className={field}
-          placeholder="Love Offering/Flat Check/Offering + Expense Check/Other"
+          placeholder="Love Offering / Flat Check / Offering + Expense Check / Other"
         />
       </div>
 
