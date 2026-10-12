@@ -79,12 +79,12 @@ export const PRODUCTS: Product[] = [
     blurb:
       "Every album Stephen has recorded — new songs, classic hymns, an instrumental record, and the Christmas album. Sixty songs for the price of three CDs.",
     covers: [
+      "/store/front-cover.jpg",
       "/store/you-are-loved.jpg",
       "/store/never-too-far.jpg",
       "/store/onward-christian-soldiers.jpg",
       "/store/amazing-grace.jpg",
       "/store/a-christmas-hallelujah.jpg",
-      "/store/he-wont-fail-you.jpg",
     ],
     paypal: { kind: "hosted", buttonId: "3HJJVRRAWJAL8" },
     stripeUrl: "",
