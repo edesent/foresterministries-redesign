@@ -41,6 +41,7 @@
         "Grace & Mercy",
         "BONUS TRACK: God Is So Good"
       ],
+      "paypal": { "kind": "hosted-sdk", "hostedButtonId": "NLTEH4Y367DY2" },
       "stripeUrl": ""
     },
     {
