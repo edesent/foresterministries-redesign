@@ -92,6 +92,7 @@ export async function POST(request: Request) {
   const church = clean(b.church, 120);
   const location = clean(b.location, 80);
   const dates = clean(b.dates, 120);
+  const budget = clean(b.budget, 120);
   const type = clean(b.type, 60);
   const email = clean(b.email, 120);
   const phone = clean(b.phone, 40);
