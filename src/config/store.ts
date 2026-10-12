@@ -75,6 +75,7 @@ export const PRODUCTS: Product[] = [
     badge: "Best value",
     featured: true,
     category: "collection",
+    image: "/store/all-six-albums-package.jpg",
     blurb:
       "Every album Stephen has recorded — new songs, classic hymns, an instrumental record, and the Christmas album. Sixty songs for the price of three CDs.",
     covers: [
