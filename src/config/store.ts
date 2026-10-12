@@ -185,7 +185,7 @@ export const PRODUCTS: Product[] = [
     badge: "Two-album collection",
     category: "collection",
     image: "https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/ZRY7NQt4EcoD8cdyyILWDxpwediiCY7L/2026%20USB%20artwork%20FRONT-ntagYvpUf1yCmzVuTzPinMVPusLovP.jpg",
-    blurb: "Enjoy Stephen Forester’s Sunshine & Rain and You Are Loved on one convenient USB drive.",
+    blurb: "Enjoy Stephen Forester’s Sunshine & Rain and You Are Loved albums on one convenient USB drive.",
     paypal: { kind: "link", paymentId: "AC3DQUND54QPL" },
     stripeUrl: "",
   },
