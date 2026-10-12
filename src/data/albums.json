@@ -30,7 +30,9 @@
       "cover": "front-cover.jpg",
       "price": 10,
       "badge": "Newest",
-      "songs": [],
+      "songs": [
+        "He Can"
+      ],
       "stripeUrl": ""
     },
     {
