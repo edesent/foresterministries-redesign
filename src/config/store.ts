@@ -75,7 +75,7 @@ export const PRODUCTS: Product[] = [
     badge: "Best value",
     featured: true,
     category: "collection",
-    image: "/store/all-six-albums-package.jpg",
+    image: "/store/front-cover.jpg",
     blurb:
       "Every album Stephen has recorded — new songs, classic hymns, an instrumental record, and the Christmas album. Sixty songs for the price of three CDs.",
     covers: [
@@ -84,7 +84,6 @@ export const PRODUCTS: Product[] = [
       "/store/onward-christian-soldiers.jpg",
       "/store/amazing-grace.jpg",
       "/store/a-christmas-hallelujah.jpg",
-      "/store/he-wont-fail-you.jpg",
     ],
     paypal: { kind: "hosted", buttonId: "3HJJVRRAWJAL8" },
     stripeUrl: "",
