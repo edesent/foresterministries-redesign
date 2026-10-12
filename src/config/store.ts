@@ -26,6 +26,8 @@
 export type PayPal =
   // The classic "hosted button" (PayPal → Pay & Get Paid → PayPal buttons)
   | { kind: "hosted"; buttonId: string }
+  // PayPal JavaScript SDK hosted button
+  | { kind: "hosted-sdk"; hostedButtonId: string }
   // The newer PayPal payment link (pays via /ncp/payment/...)
   | { kind: "link"; paymentId: string };
 
