@@ -178,6 +178,15 @@ function Form({ preset }: { preset: string | null }) {
       </div>
 
       <div>
+        <label className={labelCls}>Proposed Budget</label>
+        <input
+          name="budget"
+          className={field}
+          placeholder="Love Offering/Flat Check/Other"
+        />
+      </div>
+
+      <div>
         <label className={labelCls}>Anything else Stephen should know?</label>
         <textarea
           name="message"
