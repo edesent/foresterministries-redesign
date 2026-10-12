@@ -271,7 +271,7 @@ export const PRODUCTS: Product[] = [
     kicker: "Blue · sizes S–3XL",
     price: 20,
     category: "apparel",
-    image: "/store/shirt-grace-and-mercy.jpeg",
+    image: "/store/img-9747.jpeg",
     blurb:
       "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
     buyNote: "Tell us your size at checkout.",
