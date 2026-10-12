@@ -7,17 +7,17 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import VideoEmbed from "@/components/VideoEmbed";
 import { MUSIC_PARAGRAPHS, INSTRUMENTS } from "@/config/content";
-import { PRODUCTS } from "@/config/store";
+import { ALBUMS, ALBUM_COUNT_TITLE } from "@/config/store";
 import { SITE, phoneTel } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "The Music",
   description:
-    "Stephen Forester sings southern and traditional gospel music, and plays piano, guitars, and ocarina. Six recorded albums, formally trained, mixing new songs with the old hymns.",
+    `Stephen Forester sings southern and traditional gospel music, and plays piano, guitars, and ocarina. ${ALBUM_COUNT_TITLE} recorded albums, formally trained, mixing new songs with the old hymns.`,
 };
 
 export default function Music() {
-  const albums = PRODUCTS.filter((p) => p.category === "album");
+  const albums = ALBUMS;
 
   return (
     <>
@@ -119,7 +119,7 @@ export default function Music() {
               <div>
                 <p className="eyebrow text-brass">Discography</p>
                 <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ivory leading-tight">
-                  Six albums
+                  {ALBUM_COUNT_TITLE} albums
                 </h2>
               </div>
               <Link href="/store" className="btn btn-primary btn-sm">
@@ -133,7 +133,7 @@ export default function Music() {
                   <Link href="/store" className="group block">
                     <div className="relative aspect-square overflow-hidden rounded-xl ring-1 ring-ivory/10 transition-all duration-300 group-hover:ring-brass/50">
                       <Image
-                        src={a.image!}
+                        src={a.cover}
                         alt={`${a.title} — album cover`}
                         fill
                         sizes="(max-width: 640px) 50vw, 17vw"
@@ -144,7 +144,7 @@ export default function Music() {
                       {a.title}
                     </p>
                     <p className="text-xs uppercase tracking-[0.13em] text-ivory/40 mt-1">
-                      {a.kicker}
+                      {a.subtitle}
                     </p>
                   </Link>
                 </Reveal>

@@ -1,5 +1,9 @@
 // Stephen Forester Ministries — the store.
 //
+// THE CDs ARE NOT IN THIS FILE. They live in src/data/albums.json, which has
+// its own instructions at the top. This file holds the bundle, the USB drive,
+// and the T-shirts.
+//
 // ────────────────────────────────────────────────────────────────────────────
 //  SWITCHING FROM PAYPAL TO STRIPE
 // ────────────────────────────────────────────────────────────────────────────
@@ -22,6 +26,8 @@
 //  custom field" in the Stripe payment link so buyers can tell you their size.
 //  (That's what the current PayPal buttons ask for.)
 // ────────────────────────────────────────────────────────────────────────────
+
+import albumsFile from "@/data/albums.json";
 
 export type PayPal =
   // The classic "hosted button" (PayPal → Pay & Get Paid → PayPal buttons)
@@ -50,17 +56,96 @@ export type Product = {
   badge?: string;
   featured?: boolean;
   category: "album" | "collection" | "apparel";
-  paypal: PayPal;
+  /** Left out only for an album that has a Stripe link and no PayPal button. */
+  paypal?: PayPal;
   /** Paste a Stripe Payment Link here to move this product to Stripe. */
   stripeUrl?: string;
 };
 
+/* ------------------------------------------------------------------ albums */
+
+type AlbumEntry = {
+  title: string;
+  subtitle?: string;
+  cover: string;
+  price?: number;
+  badge?: string;
+  description?: string;
+  songs?: string[];
+  paypal?: PayPal;
+  stripeUrl?: string;
+};
+
+export type Album = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  cover: string;
+  songs: string[];
+  /** The store listing, or null while the album has no buy button yet. */
+  product: Product | null;
+};
+
+const CD_PRICE = 10;
+
+const slugify = (t: string) =>
+  t
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+/** Every CD, newest first, straight from src/data/albums.json. */
+export const ALBUMS: Album[] = (albumsFile.albums as AlbumEntry[]).map((a) => {
+  const slug = slugify(a.title);
+  const cover = a.cover.startsWith("/") ? a.cover : `/store/${a.cover}`;
+  const subtitle = a.subtitle?.trim() ?? "";
+  const songs = a.songs ?? [];
+  const stripeUrl = a.stripeUrl?.trim() ?? "";
+  const forSale = Boolean(a.paypal || stripeUrl);
+
+  return {
+    slug,
+    title: a.title,
+    subtitle,
+    cover,
+    songs,
+    product: forSale
+      ? {
+          slug,
+          title: a.title,
+          kicker: subtitle,
+          price: a.price ?? CD_PRICE,
+          image: cover,
+          blurb: a.description || undefined,
+          tracks: songs.length ? songs : undefined,
+          badge: a.badge || undefined,
+          category: "album",
+          paypal: a.paypal,
+          stripeUrl,
+        }
+      : null,
+  };
+});
+
+const NUMBER_WORDS = [
+  "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+  "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+  "seventeen", "eighteen", "nineteen", "twenty",
+];
+
+/** "six" — how many albums there are, as a word, for headings and labels. */
+export const ALBUM_COUNT = NUMBER_WORDS[ALBUMS.length] ?? String(ALBUMS.length);
+/** "Six" */
+export const ALBUM_COUNT_TITLE = ALBUM_COUNT[0].toUpperCase() + ALBUM_COUNT.slice(1);
+
 export const STORE_INFO = {
-  cdPrice: 10,
+  cdPrice: CD_PRICE,
   bundlePrice: 30,
   shirtPrice: 20,
   freeShipping: true,
-  headline: "Six albums, free shipping, and a hymn or two you haven't heard in years.",
+  headline: `${ALBUM_COUNT_TITLE} albums, free shipping, and a hymn or two you haven't heard in years.`,
   orderNote:
     "Order online below, or call and pay by card over the phone — Stephen can also arrange for you to mail a check.",
 };
@@ -69,155 +154,38 @@ export const PRODUCTS: Product[] = [
   /* ------------------------------------------------------------ collections */
   {
     slug: "all-six-albums",
-    title: "All Six Albums",
+    title: `All ${ALBUM_COUNT_TITLE} Albums`,
     kicker: "The whole catalog on CD",
     price: 30,
     badge: "Best value",
     featured: true,
     category: "collection",
-    image: "/store/front-cover.jpg",
+    image: ALBUMS[0]?.cover,
     blurb:
-      "Every album Stephen has recorded — new songs, classic hymns, an instrumental record, and the Christmas album. Sixty songs for the price of three CDs.",
-    covers: [
-      "/store/front-cover.jpg",
-      "/store/you-are-loved.jpg",
-      "/store/never-too-far.jpg",
-      "/store/onward-christian-soldiers.jpg",
-      "/store/amazing-grace.jpg",
-      "/store/a-christmas-hallelujah.jpg",
-    ],
+      `Every album Stephen has recorded — new songs, classic hymns, an instrumental record, and the Christmas album. ${ALBUM_COUNT_TITLE} albums for the price of three CDs.`,
+    covers: ALBUMS.map((a) => a.cover),
     paypal: { kind: "hosted", buttonId: "3HJJVRRAWJAL8" },
     stripeUrl: "",
   },
   {
     slug: "usb-drive",
     title: "USB Drive",
-    kicker: "All six albums on one drive",
+    kicker: `All ${ALBUM_COUNT} albums on one drive`,
     price: 30,
     badge: "No CD player? No problem",
     featured: true,
     category: "collection",
     image: "/store/usb-drive.jpg",
     blurb:
-      "New car doesn't have a CD player? All six of Stephen's albums come on a single USB drive that plays straight from any car with a USB port. You can also play it on your computer, load the songs into your music library, and put them on your phone.",
+      `New car doesn't have a CD player? All ${ALBUM_COUNT} of Stephen's albums come on a single USB drive that plays straight from any car with a USB port. You can also play it on your computer, load the songs into your music library, and put them on your phone.`,
     paypal: { kind: "hosted", buttonId: "F2GQZY9ZMCZGW" },
     stripeUrl: "",
   },
 
   /* ---------------------------------------------------------------- albums  */
-  {
-    slug: "you-are-loved",
-    title: "You Are Loved",
-    kicker: "2025 release",
-    price: 10,
-    badge: "Newest",
-    category: "album",
-    image: "/store/you-are-loved.jpg",
-    tracks: [
-      "He Knows The Way",
-      "Still Amazing",
-      "The Last Time I Checked",
-      "Beautiful Scars",
-      "I Trust You With My Life",
-      "Loved",
-      "Glory To His Name",
-      "What's Coming Next",
-      "He's Gonna Come Through",
-      "Are You Ready?",
-    ],
-    paypal: { kind: "link", paymentId: "345K63CHRL2HN" },
-    stripeUrl: "",
-  },
-  {
-    slug: "never-too-far",
-    title: "Never Too Far",
-    kicker: "2023 release",
-    price: 10,
-    category: "album",
-    image: "/store/never-too-far.jpg",
-    tracks: [
-      "He Gave His Life",
-      "Never Too Far",
-      "Leap Of Faith",
-      "You Can't Outrun Those Prayers",
-      "Chasing After You",
-      "It Takes A Little Again",
-      "I'd Choose You Again",
-      "Victory In Jesus",
-      "I Am Free",
-      "He Chooses To Use Us",
-    ],
-    paypal: { kind: "hosted", buttonId: "7EWVU7UWRBH5Q" },
-    stripeUrl: "",
-  },
-  {
-    slug: "onward-christian-soldiers",
-    title: "Onward Christian Soldiers",
-    kicker: "Instrumental collection",
-    price: 10,
-    category: "album",
-    image: "/store/onward-christian-soldiers.jpg",
-    blurb: "Hymns and gospel songs at the piano — no words, just the melodies.",
-    tracks: [
-      "Onward Christian Soldiers",
-      "God Made A Way",
-      "Sweet Hour Of Prayer",
-      "I'm Feeling Fine",
-      "Just A Closer Walk",
-      "Brethren We Have Met To Worship",
-      "Without The Lord",
-      "He Touched Me",
-      "Blood Of Jesus Medley",
-    ],
-    paypal: { kind: "hosted", buttonId: "CNS98SCWJKHZW" },
-    stripeUrl: "",
-  },
-  {
-    slug: "amazing-grace",
-    title: "Amazing Grace",
-    kicker: "Hymns",
-    price: 10,
-    category: "album",
-    image: "/store/amazing-grace.jpg",
-    blurb: "The old hymns, sung the way you remember them.",
-    tracks: [
-      "Amazing Grace",
-      "Blessed Assurance",
-      "Leaning On The Everlasting Arms",
-      "I'd Rather Have Jesus",
-      "He Paid A Debt",
-      "'Til The Storm Passes By",
-      "God On The Mountain",
-      "No One Ever Cared For Me",
-      "Beulah Land",
-      "Redeemed",
-    ],
-    paypal: { kind: "hosted", buttonId: "3XNWCNVH9F3WU" },
-    stripeUrl: "",
-  },
-  {
-    slug: "a-christmas-hallelujah",
-    title: "A Christmas Hallelujah",
-    kicker: "Christmas album",
-    price: 10,
-    category: "album",
-    image: "/store/a-christmas-hallelujah.jpg",
-    tracks: [
-      "Hallelujah",
-      "White Christmas",
-      "Come & See What's Happening",
-      "It's About The Cross",
-      "Jesus, What A Wonderful Child",
-      "It Came Upon A Midnight Clear",
-      "Glory To God In The Highest",
-      "Joseph",
-      "Fear Not",
-      "Still The Greatest Story",
-      "Go Tell It On The Mountain",
-    ],
-    paypal: { kind: "hosted", buttonId: "SHMHWKZ9ENXGN" },
-    stripeUrl: "",
-  },
+  // From src/data/albums.json — only the ones with a buy button.
+  ...ALBUMS.flatMap((a) => (a.product ? [a.product] : [])),
+
   /* --------------------------------------------------------------- apparel  */
   {
     slug: "shirt-grace-and-mercy",

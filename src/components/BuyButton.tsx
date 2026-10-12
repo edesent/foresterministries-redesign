@@ -42,6 +42,8 @@ export default function BuyButton({
     );
   }
 
+  if (!product.paypal) return null;
+
   // ---- PayPal: newer payment link ----
   if (product.paypal.kind === "link") {
     return (

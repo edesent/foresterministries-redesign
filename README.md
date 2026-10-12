@@ -11,7 +11,7 @@ Live on Vercel; every push to `main` redeploys the site in about a minute.
 
 ## How to make a change (plain English)
 
-Almost everything you'd want to edit lives in **four files** in `src/config/`.
+Almost everything you'd want to edit lives in `src/config/`, plus the CD list in `src/data/albums.json`.
 You never have to touch the design or the page layout.
 
 | I want to change… | Edit this file |
@@ -19,10 +19,35 @@ You never have to touch the design or the page layout.
 | Phone, email, mailing address, Facebook link, the verse in the footer | `src/config/site.ts` |
 | Any paragraph of wording — the About story, the FAQs, pastor endorsements, what he believes | `src/config/content.ts` |
 | Tour dates | `src/config/schedule.ts` |
-| Store products, prices, song lists, checkout links | `src/config/store.ts` |
+| **CDs** — add a new album, song lists, covers, album buy buttons | `src/data/albums.json` |
+| The bundle, USB drive, T-shirts, and their checkout links | `src/config/store.ts` |
 
 Each file has instructions in comments at the top. Keep the quotes and commas
 where they are and you can't break anything.
+
+### Adding a CD
+
+Upload the cover to `public/store/`, then open `src/data/albums.json`, copy one of
+the albums, paste it at the top of the list (newest first), and change it:
+
+```json
+{
+  "title": "My New Album",
+  "subtitle": "2026 release",
+  "cover": "my-new-album.jpg",
+  "badge": "Newest",
+  "songs": ["First Song", "Second Song", "Third Song"],
+  "paypal": { "kind": "hosted", "buttonId": "XXXXXXXXXXXXX" },
+  "stripeUrl": ""
+},
+```
+
+That's all. The store, the music page, the home page, the bundle covers, and every
+"six albums" on the site update on their own. An album without a `paypal` button
+or `stripeUrl` still appears on the music page and in the bundle, but doesn't get
+its own buy card until it has one. The file explains every field at the top. If
+you make a typo, the build stops with a plain-English note saying which album
+and what's wrong, and the live site keeps showing the last good version.
 
 ### Adding a tour date
 

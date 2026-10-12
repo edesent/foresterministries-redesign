@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import VideoEmbed from "@/components/VideoEmbed";
 import { SITE, phoneTel } from "@/config/site";
 import { PILLARS, HOME_STATS, ENDORSEMENTS, ABOUT_INTRO } from "@/config/content";
-import { PRODUCTS, findProduct } from "@/config/store";
+import { ALBUMS, ALBUM_COUNT_TITLE } from "@/config/store";
 import { upcomingEvents, formatEventDate } from "@/config/schedule";
 
 // Past dates fall off the schedule on their own — re-check every hour.
@@ -39,10 +39,9 @@ export default function Home() {
   const events = upcomingEvents();
   const nextEvents = events.slice(0, 5);
   const next = events[0];
-  const featured = findProduct("you-are-loved");
-  const otherAlbums = PRODUCTS.filter(
-    (p) => p.category === "album" && p.slug !== "you-are-loved",
-  );
+  // The newest album you can buy gets the big spot; the rest sit below it.
+  const featured = ALBUMS.find((a) => a.product)?.product;
+  const otherAlbums = ALBUMS.filter((a) => a.slug !== featured?.slug);
 
   return (
     <>
@@ -261,7 +260,7 @@ export default function Home() {
             <Reveal className="max-w-2xl">
               <p className="eyebrow text-brass">The music</p>
               <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ivory leading-tight">
-                Six albums, and a hymn or two you haven&rsquo;t heard in years
+                {ALBUM_COUNT_TITLE} albums, and a hymn or two you haven’t heard in years
               </h2>
             </Reveal>
 
@@ -281,7 +280,8 @@ export default function Home() {
                   </div>
                   <div className="p-8 sm:p-10 flex flex-col justify-center">
                     <p className="eyebrow text-brass/85 text-[0.6rem]">
-                      Newest release · {featured.kicker}
+                      {featured.slug === ALBUMS[0].slug ? "Newest release · " : ""}
+                      {featured.kicker}
                     </p>
                     <h3 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ivory">
                       {featured.title}
@@ -318,7 +318,7 @@ export default function Home() {
                     className="group relative aspect-square overflow-hidden rounded-xl ring-1 ring-ivory/10 transition-all duration-300 hover:ring-brass/50 hover:-translate-y-1"
                   >
                     <Image
-                      src={a.image!}
+                      src={a.cover}
                       alt={`${a.title} — album cover`}
                       fill
                       sizes="(max-width: 640px) 50vw, 20vw"

@@ -1,0 +1,132 @@
+{
+  "howToAddACd": [
+    "Every CD on the website comes from the list below. Newest goes at the top.",
+    "To add a new CD:",
+    "  1. Upload the cover photo to the public/store folder (for example public/store/my-new-album.jpg).",
+    "  2. Copy one of the albums below, paste it at the top of the list, and change the words.",
+    "  3. Save. The store, the music page, the home page, and the All Albums bundle all update on their own,",
+    "     including every place the site says how many albums there are.",
+    "Each album:",
+    "  title        the album name (required)",
+    "  subtitle     the small line above the name, like \"2025 release\"",
+    "  cover        the photo's file name in public/store (required)",
+    "  price        leave it out for the normal $10",
+    "  badge        optional red tag on the cover, like \"Newest\"",
+    "  description  optional sentence about the album",
+    "  songs        the song list, in order",
+    "  paypal       the PayPal button. Use whichever one PayPal gave you:",
+    "                 { \"kind\": \"hosted\", \"buttonId\": \"XXXXXXXXXXXXX\" }",
+    "                 { \"kind\": \"link\", \"paymentId\": \"XXXXXXXXXXXXX\" }   (from a paypal.com/ncp/payment/... link)",
+    "                 { \"kind\": \"hosted-sdk\", \"hostedButtonId\": \"XXXXXXXXXXXXX\" }",
+    "  stripeUrl    optional Stripe payment link; when filled in, it is used instead of PayPal",
+    "No buy button yet? Leave out paypal and stripeUrl. The album still shows on the music page and in the",
+    "All Albums bundle, and it joins the store as soon as you add a button.",
+    "Keep the quote marks, and put a comma between albums and between songs (but not after the last one)."
+  ],
+  "albums": [
+    {
+      "title": "Sunshine & Rain",
+      "subtitle": "",
+      "cover": "front-cover.jpg",
+      "songs": []
+    },
+    {
+      "title": "You Are Loved",
+      "subtitle": "2025 release",
+      "cover": "you-are-loved.jpg",
+      "badge": "Newest",
+      "songs": [
+        "He Knows The Way",
+        "Still Amazing",
+        "The Last Time I Checked",
+        "Beautiful Scars",
+        "I Trust You With My Life",
+        "Loved",
+        "Glory To His Name",
+        "What's Coming Next",
+        "He's Gonna Come Through",
+        "Are You Ready?"
+      ],
+      "paypal": { "kind": "link", "paymentId": "345K63CHRL2HN" },
+      "stripeUrl": ""
+    },
+    {
+      "title": "Never Too Far",
+      "subtitle": "2023 release",
+      "cover": "never-too-far.jpg",
+      "songs": [
+        "He Gave His Life",
+        "Never Too Far",
+        "Leap Of Faith",
+        "You Can't Outrun Those Prayers",
+        "Chasing After You",
+        "It Takes A Little Again",
+        "I'd Choose You Again",
+        "Victory In Jesus",
+        "I Am Free",
+        "He Chooses To Use Us"
+      ],
+      "paypal": { "kind": "hosted", "buttonId": "7EWVU7UWRBH5Q" },
+      "stripeUrl": ""
+    },
+    {
+      "title": "Onward Christian Soldiers",
+      "subtitle": "Instrumental collection",
+      "cover": "onward-christian-soldiers.jpg",
+      "description": "Hymns and gospel songs at the piano — no words, just the melodies.",
+      "songs": [
+        "Onward Christian Soldiers",
+        "God Made A Way",
+        "Sweet Hour Of Prayer",
+        "I'm Feeling Fine",
+        "Just A Closer Walk",
+        "Brethren We Have Met To Worship",
+        "Without The Lord",
+        "He Touched Me",
+        "Blood Of Jesus Medley"
+      ],
+      "paypal": { "kind": "hosted", "buttonId": "CNS98SCWJKHZW" },
+      "stripeUrl": ""
+    },
+    {
+      "title": "Amazing Grace",
+      "subtitle": "Hymns",
+      "cover": "amazing-grace.jpg",
+      "description": "The old hymns, sung the way you remember them.",
+      "songs": [
+        "Amazing Grace",
+        "Blessed Assurance",
+        "Leaning On The Everlasting Arms",
+        "I'd Rather Have Jesus",
+        "He Paid A Debt",
+        "'Til The Storm Passes By",
+        "God On The Mountain",
+        "No One Ever Cared For Me",
+        "Beulah Land",
+        "Redeemed"
+      ],
+      "paypal": { "kind": "hosted", "buttonId": "3XNWCNVH9F3WU" },
+      "stripeUrl": ""
+    },
+    {
+      "title": "A Christmas Hallelujah",
+      "subtitle": "Christmas album",
+      "cover": "a-christmas-hallelujah.jpg",
+      "songs": [
+        "Hallelujah",
+        "White Christmas",
+        "Come & See What's Happening",
+        "It's About The Cross",
+        "Jesus, What A Wonderful Child",
+        "It Came Upon A Midnight Clear",
+        "Glory To God In The Highest",
+        "Joseph",
+        "Fear Not",
+        "Still The Greatest Story",
+        "Go Tell It On The Mountain"
+      ],
+      "paypal": { "kind": "hosted", "buttonId": "SHMHWKZ9ENXGN" },
+      "stripeUrl": ""
+    }
+  ]
+}

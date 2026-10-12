@@ -7,13 +7,13 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProductCard from "@/components/ProductCard";
 import BuyButton from "@/components/BuyButton";
-import { byCategory, findProduct, STORE_INFO } from "@/config/store";
+import { ALBUM_COUNT, byCategory, findProduct, STORE_INFO } from "@/config/store";
 import { SITE, phoneTel } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Store",
   description:
-    "Stephen Forester's gospel music on CD and USB — six albums including hymns, an instrumental record, and a Christmas album. $10 each or all six for $30, with free shipping. T-shirts also available.",
+    `Stephen Forester's gospel music on CD and USB — ${ALBUM_COUNT} albums including hymns, an instrumental record, and a Christmas album. $${STORE_INFO.cdPrice} each or all ${ALBUM_COUNT} for $${STORE_INFO.bundlePrice}, with free shipping. T-shirts also available.`,
 };
 
 const ORDER_METHODS = [
@@ -34,7 +34,7 @@ const ORDER_METHODS = [
 export default function Store() {
   const bundle = findProduct("all-six-albums");
   const usb = findProduct("usb-drive");
-  const albums = [bundle, ...byCategory("album").filter((p) => p.slug !== "he-wont-fail-you")].filter((p): p is NonNullable<typeof p> => Boolean(p));
+  const albums = [bundle, ...byCategory("album")].filter((p): p is NonNullable<typeof p> => Boolean(p));
   const shirts = byCategory("apparel");
 
   return (
@@ -75,7 +75,7 @@ export default function Store() {
                 </span>
                 <span className="hidden sm:block h-4 w-px bg-brass/30" />
                 <span className="text-sm text-ivory/65">
-                  CDs ${STORE_INFO.cdPrice} each · all six for ${STORE_INFO.bundlePrice}
+                  CDs ${STORE_INFO.cdPrice} each · all {ALBUM_COUNT} for ${STORE_INFO.bundlePrice}
                 </span>
               </div>
             </Reveal>
@@ -134,7 +134,7 @@ export default function Store() {
                         </span>
                       </div>
                       <div className="mt-auto pt-5">
-                        <BuyButton product={bundle} label={`Buy all six · $${bundle.price}`} />
+                        <BuyButton product={bundle} label={`Buy all ${ALBUM_COUNT} · $${bundle.price}`} />
                       </div>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function Store() {
                     <div className="relative aspect-[21/10]">
                       <Image
                         src={usb.image!}
-                        alt="Stephen Forester USB drive with six complete albums"
+                        alt={`Stephen Forester USB drive with ${ALBUM_COUNT} complete albums`}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover"
@@ -191,7 +191,7 @@ export default function Store() {
                 The albums
               </h2>
               <p className="mt-4 max-w-2xl text-ivory/60 leading-relaxed">
-                ${STORE_INFO.cdPrice} each, or all six for ${STORE_INFO.bundlePrice}. Every
+                ${STORE_INFO.cdPrice} each, or all {ALBUM_COUNT} for ${STORE_INFO.bundlePrice}. Every
                 order ships free.
               </p>
             </Reveal>
