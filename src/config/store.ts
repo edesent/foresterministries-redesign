@@ -265,6 +265,19 @@ export const PRODUCTS: Product[] = [
     paypal: { kind: "link", paymentId: "KFB9VHSGMZP4N" },
     stripeUrl: "",
   },
+  {
+    slug: "shirt-grace-and-mercy",
+    title: "“I Found God’s Grace & Mercy” T-Shirt",
+    kicker: "Blue · sizes S–3XL",
+    price: 20,
+    category: "apparel",
+    image: "/store/shirt-grace-and-mercy.jpeg",
+    blurb:
+      "Share the message of God’s grace and mercy. Soft, comfortable, and true to size with virtually no shrinkage. Available from small all the way to 3XL.",
+    buyNote: "Tell us your size at checkout.",
+    paypal: { kind: "hosted", buttonId: "GSHMGE2RY4S64" },
+    stripeUrl: "",
+  },
 ];
 
 /* ----------------------------------------------------------------- helpers  */
