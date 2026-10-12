@@ -57,7 +57,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )
         )}
         {p.badge && (
-          <span className="absolute top-3.5 left-3.5 rounded-full bg-crimson px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-ivory shadow-lg">
+          <span className={`absolute top-3.5 ${p.slug === "shirt-grace-and-mercy" ? "right-3.5" : "left-3.5"} rounded-full bg-crimson px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-ivory shadow-lg`}>
             {p.badge}
           </span>
         )}
