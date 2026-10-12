@@ -39,8 +39,8 @@ export default function Home() {
   const events = upcomingEvents();
   const nextEvents = events.slice(0, 5);
   const next = events[0];
-  // The newest album you can buy gets the big spot; the rest sit below it.
-  const featured = ALBUMS.find((a) => a.product)?.product;
+  // The newest album gets the big spot; the rest sit below it.
+  const featured = ALBUMS[0]?.product;
   const otherAlbums = ALBUMS.filter((a) => a.slug !== featured?.slug);
 
   return (
@@ -280,8 +280,8 @@ export default function Home() {
                   </div>
                   <div className="p-8 sm:p-10 flex flex-col justify-center">
                     <p className="eyebrow text-brass/85 text-[0.6rem]">
-                      {featured.slug === ALBUMS[0].slug ? "Newest release · " : ""}
-                      {featured.kicker}
+                      Newest release
+                      {featured.kicker && !/^new/i.test(featured.kicker) ? ` · ${featured.kicker}` : ""}
                     </p>
                     <h3 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ivory">
                       {featured.title}

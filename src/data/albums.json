@@ -19,22 +19,24 @@
     "                 { \"kind\": \"link\", \"paymentId\": \"XXXXXXXXXXXXX\" }   (from a paypal.com/ncp/payment/... link)",
     "                 { \"kind\": \"hosted-sdk\", \"hostedButtonId\": \"XXXXXXXXXXXXX\" }",
     "  stripeUrl    optional Stripe payment link; when filled in, it is used instead of PayPal",
-    "No buy button yet? Leave out paypal and stripeUrl. The album still shows on the music page and in the",
-    "All Albums bundle, and it joins the store as soon as you add a button.",
+    "No PayPal button yet? Leave out paypal. The album still goes in the store, and its button says",
+    "\"Call to order\" (it dials Stephen's phone) until you add one.",
     "Keep the quote marks, and put a comma between albums and between songs (but not after the last one)."
   ],
   "albums": [
     {
       "title": "Sunshine & Rain",
-      "subtitle": "",
+      "subtitle": "New release",
       "cover": "front-cover.jpg",
-      "songs": []
+      "price": 10,
+      "badge": "Newest",
+      "songs": [],
+      "stripeUrl": ""
     },
     {
       "title": "You Are Loved",
       "subtitle": "2025 release",
       "cover": "you-are-loved.jpg",
-      "badge": "Newest",
       "songs": [
         "He Knows The Way",
         "Still Amazing",

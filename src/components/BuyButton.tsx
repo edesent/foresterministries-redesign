@@ -1,6 +1,7 @@
 import type { Product } from "@/config/store";
 import { usesStripe } from "@/config/store";
 import PayPalHostedButton from "@/components/PayPalHostedButton";
+import { SITE, phoneTel } from "@/config/site";
 
 /**
  * The "Buy" button for one product.
@@ -42,7 +43,14 @@ export default function BuyButton({
     );
   }
 
-  if (!product.paypal) return null;
+  // ---- No online checkout yet: call Stephen ----
+  if (!product.paypal) {
+    return (
+      <a href={`tel:${phoneTel}`} className={btn}>
+        Call to order · {SITE.phone}
+      </a>
+    );
+  }
 
   // ---- PayPal: newer payment link ----
   if (product.paypal.kind === "link") {

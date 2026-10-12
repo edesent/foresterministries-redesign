@@ -56,7 +56,7 @@ export type Product = {
   badge?: string;
   featured?: boolean;
   category: "album" | "collection" | "apparel";
-  /** Left out only for an album that has a Stripe link and no PayPal button. */
+  /** Left out when there's no PayPal button yet: the button becomes "Call to order". */
   paypal?: PayPal;
   /** Paste a Stripe Payment Link here to move this product to Stripe. */
   stripeUrl?: string;
@@ -82,8 +82,8 @@ export type Album = {
   subtitle: string;
   cover: string;
   songs: string[];
-  /** The store listing, or null while the album has no buy button yet. */
-  product: Product | null;
+  /** The store listing. */
+  product: Product;
 };
 
 const CD_PRICE = 10;
@@ -103,29 +103,25 @@ export const ALBUMS: Album[] = (albumsFile.albums as AlbumEntry[]).map((a) => {
   const subtitle = a.subtitle?.trim() ?? "";
   const songs = a.songs ?? [];
   const stripeUrl = a.stripeUrl?.trim() ?? "";
-  const forSale = Boolean(a.paypal || stripeUrl);
-
   return {
     slug,
     title: a.title,
     subtitle,
     cover,
     songs,
-    product: forSale
-      ? {
-          slug,
-          title: a.title,
-          kicker: subtitle,
-          price: a.price ?? CD_PRICE,
-          image: cover,
-          blurb: a.description || undefined,
-          tracks: songs.length ? songs : undefined,
-          badge: a.badge || undefined,
-          category: "album",
-          paypal: a.paypal,
-          stripeUrl,
-        }
-      : null,
+    product: {
+      slug,
+      title: a.title,
+      kicker: subtitle,
+      price: a.price ?? CD_PRICE,
+      image: cover,
+      blurb: a.description || undefined,
+      tracks: songs.length ? songs : undefined,
+      badge: a.badge || undefined,
+      category: "album",
+      paypal: a.paypal,
+      stripeUrl,
+    },
   };
 });
 
@@ -183,8 +179,8 @@ export const PRODUCTS: Product[] = [
   },
 
   /* ---------------------------------------------------------------- albums  */
-  // From src/data/albums.json — only the ones with a buy button.
-  ...ALBUMS.flatMap((a) => (a.product ? [a.product] : [])),
+  // From src/data/albums.json.
+  ...ALBUMS.map((a) => a.product),
 
   /* --------------------------------------------------------------- apparel  */
   {
