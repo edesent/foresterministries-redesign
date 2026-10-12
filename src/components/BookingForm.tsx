@@ -140,6 +140,15 @@ function Form({ preset }: { preset: string | null }) {
       </div>
 
       <div>
+        <label className={labelCls}>Proposed Budget</label>
+        <input
+          name="budget"
+          className={field}
+          placeholder="Love Offering/Flat Check/Offering + Expense Check/Other"
+        />
+      </div>
+
+      <div>
         <label className={labelCls}>What’s this about?</label>
         <div className="flex flex-wrap gap-2">
           {EVENT_TYPES.map((t) => (
