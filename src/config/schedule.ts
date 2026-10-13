@@ -335,6 +335,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2026-11-30",
+    venue: "Flint First Wesleyan Church",
+    address: "3825 Davison Rd.",
+    city: "Flint",
+    state: "MI",
+    zip: "48506",
+    time: "7:00pm concert",
+  },
+  {
     date: "2026-12-04",
     venue: "Westview Baptist Church",
     address: "2140 Stephens Rd.",
