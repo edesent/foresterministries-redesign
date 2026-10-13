@@ -244,15 +244,6 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
-    date: "2026-10-12",
-    venue: "Wendy's Gospel Sing",
-    address: "428 W. Main St.",
-    city: "Owosso",
-    state: "MI",
-    zip: "48867",
-    time: "7:00pm concert",
-  },
-  {
     date: "2026-10-17",
     venue: "Royalton Bible Church",
     address: "8457 Bunkerhill Rd.",
