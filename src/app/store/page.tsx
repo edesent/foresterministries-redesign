@@ -257,8 +257,14 @@ export default function Store() {
 
             <div className="mt-12 grid gap-7 sm:grid-cols-2">
               {shirts.map((p, i) => (
-                <Reveal key={p.slug} delay={i * 100} className="h-full">
-                  <ProductCard product={p} />
+                <Reveal
+                  key={p.slug}
+                  delay={i * 100}
+                  className={`h-full ${p.slug === "shirt-i-once-was-lost" ? "sm:col-span-2" : ""}`}
+                >
+                  <div className={p.slug === "shirt-i-once-was-lost" ? "mx-auto w-full max-w-md" : "h-full"}>
+                    <ProductCard product={p} />
+                  </div>
                 </Reveal>
               ))}
             </div>
