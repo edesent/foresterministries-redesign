@@ -371,6 +371,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2026-12-10",
+    venue: "Richfield Reaching Global Methodist Church",
+    address: "10090 E. Coldwater Rd.",
+    city: "Davison",
+    state: "MI",
+    zip: "48423",
+    time: "6:00pm concert",
+  },
+  {
     date: "2026-12-11",
     venue: "Bethany Church",
     address: "353 E. Vienna St.",
