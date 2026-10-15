@@ -280,15 +280,6 @@ export const EVENTS: Event[] = [
     time: "2:00pm concert",
   },
   {
-    date: "2026-11-07",
-    venue: "First Baptist Church of Goodrich",
-    address: "6116 S. State Rd.",
-    city: "Goodrich",
-    state: "MI",
-    zip: "48438",
-    time: "3:00pm concert",
-  },
-  {
     date: "2026-11-08",
     venue: "Mizpah Missionary Church",
     address: "4631 N. Van Dyke Rd.",
