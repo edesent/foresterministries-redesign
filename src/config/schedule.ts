@@ -445,8 +445,7 @@ export const EVENTS: Event[] = [
   },
   {
     date: "2027-01-24",
-    venue: "First Presbyterian Church",
-    host: "Emmanuel Baptist Church",
+    venue: "Emmanuel Baptist Church",
     address: "12225 N. 103rd Ave.",
     city: "Sun City",
     state: "AZ",
