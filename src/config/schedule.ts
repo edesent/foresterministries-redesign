@@ -470,6 +470,7 @@ export const EVENTS: Event[] = [
     city: "Tempe",
     state: "AZ",
     zip: "85284",
+    time: "10:00am concert",
   },
 ];
 
