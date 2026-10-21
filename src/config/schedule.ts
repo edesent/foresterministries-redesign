@@ -472,6 +472,42 @@ export const EVENTS: Event[] = [
     zip: "85284",
     time: "10:00am concert",
   },
+  {
+    date: "2027-02-06",
+    venue: "Immanuel Baptist Church",
+    address: "1565 E. Forest Ave.",
+    city: "Ypsilanti",
+    state: "MI",
+    zip: "48198",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-02-07",
+    venue: "Crosspoint Freewill Baptist Church",
+    address: "4015 Allen Rd.",
+    city: "Allen Park",
+    state: "MI",
+    zip: "48101",
+    time: "11:00am service",
+  },
+  {
+    date: "2027-02-21",
+    venue: "Beacon Of Hope Church",
+    address: "2109 W. Michigan Ave.",
+    city: "Saginaw",
+    state: "MI",
+    zip: "48638",
+    time: "10:00am service",
+  },
+  {
+    date: "2027-03-21",
+    venue: "Faith Baptist Church",
+    address: "4544 W. M-61",
+    city: "Standish",
+    state: "MI",
+    zip: "48658",
+    time: "11:00am service",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
