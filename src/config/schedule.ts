@@ -634,6 +634,14 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2027-08-07",
+    venue: "Church Of Daniel's Band Campground",
+    address: "3362 Croll Rd.",
+    city: "Beaverton",
+    state: "MI",
+    time: "7:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
