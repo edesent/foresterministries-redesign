@@ -669,6 +669,15 @@ export const EVENTS: Event[] = [
     time: "Dinner at 6:00pm, concert at 7:00pm",
   },
   {
+    date: "2027-08-20",
+    venue: "Charter Senior Living Of Davison",
+    address: "10222 Lapeer Rd.",
+    city: "Davison",
+    state: "MI",
+    zip: "48423",
+    time: "3:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
