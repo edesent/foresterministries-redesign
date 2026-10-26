@@ -598,6 +598,15 @@ export const EVENTS: Event[] = [
     time: "11:00am service",
   },
   {
+    date: "2027-06-20",
+    venue: "Nevins Lake Church",
+    address: "837 S. Nevins Road",
+    city: "Stanton",
+    state: "MI",
+    zip: "48888",
+    time: "6:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
