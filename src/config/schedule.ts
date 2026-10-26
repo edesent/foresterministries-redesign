@@ -543,6 +543,15 @@ export const EVENTS: Event[] = [
     zip: "61704",
     time: "10:30am service",
   },
+  {
+    date: "2027-04-18",
+    venue: "Vanderbilt Community Church",
+    address: "455 W. Main St.",
+    city: "Vanderbilt",
+    state: "MI",
+    zip: "49795",
+    time: "11:00am service",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
