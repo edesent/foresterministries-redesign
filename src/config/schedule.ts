@@ -625,6 +625,15 @@ export const EVENTS: Event[] = [
     time: "10:00am service",
   },
   {
+    date: "2027-07-10",
+    venue: "Zion Lutheran Church",
+    address: "350 Pearl St.",
+    city: "Cadillac",
+    state: "MI",
+    zip: "49601",
+    time: "6:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
