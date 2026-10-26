@@ -616,6 +616,15 @@ export const EVENTS: Event[] = [
     time: "2:00pm concert",
   },
   {
+    date: "2027-07-04",
+    venue: "Laman's Landing RV Resort",
+    address: "6100 N Beaune Rd.",
+    city: "Ludington",
+    state: "MI",
+    zip: "49431",
+    time: "10:00am service",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
