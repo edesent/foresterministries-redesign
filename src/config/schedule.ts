@@ -523,7 +523,7 @@ export const EVENTS: Event[] = [
     city: "Swartz Creek",
     state: "MI",
     zip: "48473",
-    time: "3:00pm concert",
+    time: "2:00pm concert",
   },
   {
     date: "2027-04-03",
