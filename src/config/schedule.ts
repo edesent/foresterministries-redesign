@@ -516,6 +516,33 @@ export const EVENTS: Event[] = [
     zip: "48658",
     time: "11:00am service",
   },
+  {
+    date: "2027-02-12",
+    venue: "Springvale Assisted Living & Memory Care",
+    address: "4276 Kroger Dr.",
+    city: "Swartz Creek",
+    state: "MI",
+    zip: "48473",
+    time: "3:00pm concert",
+  },
+  {
+    date: "2027-04-03",
+    venue: "Tri-Valley Baptist Church",
+    address: "8385 N. 1900 E. Rd.",
+    city: "Bloomington",
+    state: "IL",
+    zip: "61704",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-04-04",
+    venue: "Tri-Valley Baptist Church",
+    address: "8385 N. 1900 E. Rd.",
+    city: "Bloomington",
+    state: "IL",
+    zip: "61704",
+    time: "10:30am service",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
