@@ -571,6 +571,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2027-06-10",
+    venue: "Long Lake Bible Church",
+    address: "11840 Maple St.",
+    city: "Long Lake",
+    state: "WI",
+    zip: "54542",
+    time: "6:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
