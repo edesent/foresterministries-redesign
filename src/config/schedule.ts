@@ -561,6 +561,33 @@ export const EVENTS: Event[] = [
     zip: "65634",
     time: "11:00am service",
   },
+  {
+    date: "2027-05-14",
+    venue: "American House Of Holland",
+    address: "11911 James St.",
+    city: "Holland",
+    state: "MI",
+    zip: "49424",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-09-10",
+    venue: "American House Of Holland",
+    address: "11911 James St.",
+    city: "Holland",
+    state: "MI",
+    zip: "49424",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-12-10",
+    venue: "American House Of Holland",
+    address: "11911 James St.",
+    city: "Holland",
+    state: "MI",
+    zip: "49424",
+    time: "6:00pm concert",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
