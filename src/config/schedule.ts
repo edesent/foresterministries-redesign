@@ -688,6 +688,15 @@ export const EVENTS: Event[] = [
     time: "7:00pm concert",
   },
   {
+    date: "2027-09-19",
+    venue: "Mancelona Nazarene Church",
+    address: "119 W. Main St.",
+    city: "Mancelona",
+    state: "MI",
+    zip: "49659",
+    time: "11:00am service",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
