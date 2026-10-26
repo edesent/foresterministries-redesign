@@ -660,6 +660,15 @@ export const EVENTS: Event[] = [
     time: "9:30am service",
   },
   {
+    date: "2027-08-19",
+    venue: "Fellowship Baptist Church",
+    address: "14046 N. Saginaw Rd.",
+    city: "Clio",
+    state: "MI",
+    zip: "48420",
+    time: "Dinner at 6:00pm, concert at 7:00pm",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
