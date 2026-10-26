@@ -678,6 +678,16 @@ export const EVENTS: Event[] = [
     time: "3:00pm concert",
   },
   {
+    date: "2027-09-18",
+    venue: "Christian Coffee House",
+    description: "Hosted at Lighthouse Missionary Church",
+    address: "7824 Rogers Rd.",
+    city: "East Jordan",
+    state: "MI",
+    zip: "49727",
+    time: "7:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
