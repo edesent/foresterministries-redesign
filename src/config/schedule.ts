@@ -399,9 +399,8 @@ export const EVENTS: Event[] = [
   },
   {
     date: "2026-12-06",
-    venue: "Holiday Inn Express",
-    host: "The Table Church",
-    address: "5278 E. Pickard St.",
+    venue: "The Table Church",
+    address: "Hosted at the Holiday Inn Express, 5278 E. Pickard St.",
     city: "Mt Pleasant",
     state: "MI",
     zip: "48858",
