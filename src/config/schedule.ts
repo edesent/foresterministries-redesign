@@ -589,6 +589,15 @@ export const EVENTS: Event[] = [
     time: "10:00am concert",
   },
   {
+    date: "2027-06-13",
+    venue: "Little Lake Chapel",
+    address: "1761 E St. (1761 M-35)",
+    city: "Little Lake",
+    state: "MI",
+    zip: "49833",
+    time: "11:00am service",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
