@@ -552,6 +552,15 @@ export const EVENTS: Event[] = [
     zip: "49795",
     time: "11:00am service",
   },
+  {
+    date: "2027-04-25",
+    venue: "Cross Timbers Baptist Church",
+    address: "12854 US-65",
+    city: "Cross Timbers",
+    state: "MO",
+    zip: "65634",
+    time: "11:00am service",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
