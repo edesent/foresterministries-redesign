@@ -607,6 +607,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2027-06-25",
+    venue: "Springvale Assisted Living & Memory Care",
+    address: "4276 Kroger Dr.",
+    city: "Swartz Creek",
+    state: "MI",
+    zip: "48473",
+    time: "2:00pm concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
