@@ -580,6 +580,15 @@ export const EVENTS: Event[] = [
     time: "6:00pm concert",
   },
   {
+    date: "2027-06-11",
+    venue: "Primrose Retirement Village",
+    address: "2100 Townline Rd.",
+    city: "Wausau",
+    state: "WI",
+    zip: "54403",
+    time: "10:00am concert",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
