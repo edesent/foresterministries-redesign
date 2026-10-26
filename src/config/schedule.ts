@@ -371,6 +371,16 @@ export const EVENTS: Event[] = [
     time: "2:00pm concert",
   },
   {
+    date: "2026-12-12",
+    venue: "Faith Bible Baptist Church",
+    address: "5388 Lippincott Rd.",
+    city: "Lapeer",
+    state: "MI",
+    zip: "48446",
+    time: "5:00pm",
+    note: "Private seniors dinner concert.",
+  },
+  {
     date: "2026-12-13",
     venue: "Open Door Baptist Church",
     address: "3464 Cocotte St.",
