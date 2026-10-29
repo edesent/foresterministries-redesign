@@ -778,6 +778,15 @@ export const EVENTS: Event[] = [
     time: "2:00pm concert",
   },
   {
+    date: "2027-10-24",
+    venue: "Good News Community Church",
+    address: "4797 W. Ridge Rd.",
+    city: "Spencerport",
+    state: "NY",
+    zip: "14559",
+    time: "10:00am service",
+  },
+  {
     date: "2027-09-10",
     venue: "American House Of Holland",
     address: "11911 James St.",
