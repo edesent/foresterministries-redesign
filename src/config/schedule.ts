@@ -508,6 +508,15 @@ export const EVENTS: Event[] = [
     time: "10:00am service",
   },
   {
+    date: "2027-02-28",
+    venue: "County Line Wesleyan Church",
+    address: "2670 N. Hull Rd.",
+    city: "Twining",
+    state: "MI",
+    zip: "48766",
+    time: "11:00am service",
+  },
+  {
     date: "2027-03-21",
     venue: "Faith Baptist Church",
     address: "4544 W. M-61",
