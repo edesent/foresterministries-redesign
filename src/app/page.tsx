@@ -143,7 +143,7 @@ export default function Home() {
                   videoId={SITE.introVideoId}
                   title="the ministry introduction"
                   poster="/photos/studio-instruments.jpg"
-                  duration="2 min"
+                  duration="3 min"
                 />
               </div>
             </div>
