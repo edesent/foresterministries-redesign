@@ -128,7 +128,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 spotlight-crimson opacity-90" />
           <div className="relative max-w-5xl mx-auto px-6 text-center">
-            <p className="eyebrow text-brass">Start here · two minutes</p>
+            <p className="eyebrow text-brass">Start here · three minutes</p>
             <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-ivory leading-tight">
               See the ministry <span className="italic text-brass-light">for yourself</span>
             </h2>
