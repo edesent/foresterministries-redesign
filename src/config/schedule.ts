@@ -417,6 +417,15 @@ export const EVENTS: Event[] = [
     time: "10:30am service",
   },
   {
+    date: "2027-01-10",
+    venue: "Standish Free Methodist Church",
+    address: "422 N. Main St.",
+    city: "Standish",
+    state: "MI",
+    zip: "48658",
+    time: "11:00am service",
+  },
+  {
     date: "2027-01-16",
     venue: "1st Baptist Church Of Holbrook",
     address: "360 1st Ave.",
