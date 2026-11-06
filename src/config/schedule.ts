@@ -581,6 +581,15 @@ export const EVENTS: Event[] = [
   },
   {
     date: "2027-05-14",
+    venue: "Sheldon Meadows Assisted Living",
+    address: "4482 Port Sheldon St.",
+    city: "Hudsonville",
+    state: "MI",
+    zip: "49426",
+    time: "2:00pm concert",
+  },
+  {
+    date: "2027-05-14",
     venue: "American House Of Holland",
     address: "11911 James St.",
     city: "Holland",
