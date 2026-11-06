@@ -30,7 +30,7 @@ export const HOME_STATS = [
   { value: "100+", label: "Meetings each year" },
   { value: "2008", label: "Traveling since" },
   { value: "20", label: "Albums recorded" },
-  { value: "10+", label: "States & Canada" },
+  { value: "12+", label: "States & Canada" },
 ];
 
 /* -------------------------------------------------------------- about page  */
