@@ -849,6 +849,33 @@ export const EVENTS: Event[] = [
     zip: "49424",
     time: "6:00pm concert",
   },
+  {
+    date: "2027-02-12",
+    venue: "Swank Home Assisted Living",
+    address: "9412 Miller Rd.",
+    city: "Swartz Creek",
+    state: "MI",
+    zip: "48473",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-06-25",
+    venue: "Swank Home Assisted Living",
+    address: "9412 Miller Rd.",
+    city: "Swartz Creek",
+    state: "MI",
+    zip: "48473",
+    time: "6:00pm concert",
+  },
+  {
+    date: "2027-10-22",
+    venue: "Swank Home Assisted Living",
+    address: "9412 Miller Rd.",
+    city: "Swartz Creek",
+    state: "MI",
+    zip: "48473",
+    time: "6:00pm concert",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
