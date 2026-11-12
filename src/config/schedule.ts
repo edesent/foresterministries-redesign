@@ -472,6 +472,16 @@ export const EVENTS: Event[] = [
     note: "Meeting inside the First Presbyterian Church.",
   },
   {
+    date: "2027-01-24",
+    venue: "Oasis Baptist Church",
+    address: "15679 W. Custer Ln.",
+    city: "Surprise",
+    state: "AZ",
+    zip: "85379",
+    time: "10:30am service",
+    note: "Meeting inside the high school gymnasium.",
+  },
+  {
     date: "2027-01-25",
     venue: "Foothills Assembly Of God",
     address: "12831 E. 41st St.",
