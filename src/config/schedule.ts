@@ -463,16 +463,6 @@ export const EVENTS: Event[] = [
   },
   {
     date: "2027-01-24",
-    venue: "Emmanuel Baptist Church",
-    address: "12225 N. 103rd Ave.",
-    city: "Sun City",
-    state: "AZ",
-    zip: "85351",
-    time: "4:00pm concert",
-    note: "Meeting inside the First Presbyterian Church.",
-  },
-  {
-    date: "2027-01-24",
     venue: "Oasis Baptist Church",
     address: "15679 W. Custer Ln.",
     city: "Surprise",
@@ -480,6 +470,16 @@ export const EVENTS: Event[] = [
     zip: "85379",
     time: "10:30am service",
     note: "Meeting inside the high school gymnasium.",
+  },
+  {
+    date: "2027-01-24",
+    venue: "Emmanuel Baptist Church",
+    address: "12225 N. 103rd Ave.",
+    city: "Sun City",
+    state: "AZ",
+    zip: "85351",
+    time: "4:00pm concert",
+    note: "Meeting inside the First Presbyterian Church.",
   },
   {
     date: "2027-01-25",
