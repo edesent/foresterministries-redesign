@@ -407,15 +407,7 @@ export const EVENTS: Event[] = [
     zip: "49424",
     time: "6:00pm concert",
   },
-  {
-    date: "2026-12-27",
-    venue: "New Life Assembly of God",
-    address: "8240 Carpenter Rd.",
-    city: "Flushing",
-    state: "MI",
-    zip: "48433",
-    time: "10:30am service",
-  },
+
   {
     date: "2027-01-10",
     venue: "Standish Free Methodist Church",
