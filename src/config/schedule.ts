@@ -654,6 +654,16 @@ export const EVENTS: Event[] = [
     time: "10:00am service",
   },
   {
+    date: "2027-07-04",
+    venue: "“4th Of The North” outdoor festival",
+    address: "112 Johns St.",
+    city: "Lake City",
+    state: "MI",
+    zip: "49651",
+    time: "4:00pm performance",
+    note: "Performing a 50-minute ventriloquist show.",
+  },
+  {
     date: "2027-07-10",
     venue: "Zion Lutheran Church",
     address: "350 Pearl St.",
