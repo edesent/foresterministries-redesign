@@ -888,6 +888,33 @@ export const EVENTS: Event[] = [
     zip: "48473",
     time: "6:00pm concert",
   },
+  {
+    date: "2027-02-16",
+    venue: "Lake Huron Woods Retirement Village",
+    address: "5221 Lakeshore Rd.",
+    city: "Fort Gratiot",
+    state: "MI",
+    zip: "48059",
+    time: "3:00pm concert",
+  },
+  {
+    date: "2027-06-22",
+    venue: "Lake Huron Woods Retirement Village",
+    address: "5221 Lakeshore Rd.",
+    city: "Fort Gratiot",
+    state: "MI",
+    zip: "48059",
+    time: "3:00pm concert",
+  },
+  {
+    date: "2027-11-30",
+    venue: "Lake Huron Woods Retirement Village",
+    address: "5221 Lakeshore Rd.",
+    city: "Fort Gratiot",
+    state: "MI",
+    zip: "48059",
+    time: "3:00pm concert",
+  },
 ];
 
 /* ---------------------------------------------------------------- helpers  */
